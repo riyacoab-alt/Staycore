@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staycore — One Platform for Every Hotel Booking</title>
+  <meta name="description" content="One platform for every hotel booking — yours, theirs, and everyone else's. Run your hotel from one screen with real-time room management, AI OTA aggregation, and zero-commission direct bookings.">
+  <meta name="keywords" content="hotel management software, OTA aggregation, hotel PMS, hotel booking engine, direct booking website, Goibibo MakeMyTrip aggregator, COAB">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="main-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand-logo" aria-label="Staycore Home">
+        <div class="brand-icon">S</div>
+        <div class="brand-text">
+          <span class="brand-title">STAYCORE</span>
+          <span class="brand-subtitle">BY COAB</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="website-only.html" class="nav-link">Website-Only Plan</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Book a Demo</a>
+        <button class="menu-toggle" aria-label="Open Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-nav" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="brand-logo" style="margin-bottom: 40px;">
+        <div class="brand-icon">S</div>
+        <div class="brand-text">
+          <span class="brand-title">STAYCORE</span>
+          <span class="brand-subtitle">BY COAB</span>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+        <li><a href="features.html" class="mobile-nav-link">Features</a></li>
+        <li><a href="website-only.html" class="mobile-nav-link">Website-Only Plan</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="contact.html" class="btn btn-primary" style="width: 100%;">Book a Demo</a>
+      <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 16px;">© Staycore. Built by COAB.</p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-media">
+        <img src="assets/images/hero-suite.jpg" alt="Luxury hotel suite bedroom at night with warm moody lighting" loading="eager">
+      </div>
+
+      <div class="container hero-content">
+        <div class="badge-pill">
+          <span class="dot"></span>
+          <span>One platform for every hotel booking</span>
+        </div>
+
+        <h1 class="hero-title">
+          Run your hotel <br><span>from one screen.</span>
+        </h1>
+
+        <p class="hero-sub">
+          See every room, every booking, every OTA — in one dashboard. Eliminate double bookings, auto-sync Goibibo and MakeMyTrip confirmations, and capture 0% commission direct reservations.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#features-preview" class="btn btn-secondary btn-lg">See How It Works</a>
+        </div>
+
+        <!-- Hero Live Interactive Dashboard Mockup -->
+        <div class="hero-dashboard-preview reveal-on-scroll">
+          <div class="dashboard-frame">
+            <div class="dashboard-topbar">
+              <div class="dash-window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="dash-hotel-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+                <span>The Grand Obsidian Hotel & Spa</span>
+                <span style="color: var(--text-muted); font-size: 0.8rem;">(42 Keys)</span>
+              </div>
+              <div class="dash-live-pulse">
+                <span>Live Sync Active</span>
+              </div>
+            </div>
+
+            <div class="dashboard-body">
+              <!-- Metrics Row -->
+              <div class="metrics-row">
+                <div class="metric-box">
+                  <div class="metric-label">Occupancy Rate</div>
+                  <div class="metric-val" id="stat-occupancy-rate">88%</div>
+                  <div class="metric-sub">▲ +12% vs last week</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-label">Occupied Rooms</div>
+                  <div class="metric-val"><span id="stat-occupied-count">37</span> / 42</div>
+                  <div class="metric-sub" style="color: var(--status-ready);">5 keys ready for walk-ins</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-label">Direct vs OTA Share</div>
+                  <div class="metric-val">44% <span style="font-size: 0.8rem; color: var(--accent-gold-light);">Direct</span></div>
+                  <div class="metric-sub" style="color: var(--accent-gold);">$2,480 saved in fees</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-label">AI Parsed Bookings</div>
+                  <div class="metric-val">100%</div>
+                  <div class="metric-sub" style="color: var(--accent-sage-light);">0 missed reservations</div>
+                </div>
+              </div>
+
+              <!-- Main Dashboard Split Grid -->
+              <div class="dash-split-grid">
+                <!-- Left: Room Availability Grid -->
+                <div class="dash-panel">
+                  <div class="dash-panel-head">
+                    <div class="dash-panel-title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                      <span>Live Room Matrix (Click room to toggle status)</span>
+                    </div>
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Floor 1 - 3</span>
+                  </div>
+
+                  <div class="rooms-mock-grid">
+                    <div class="room-cell" data-room="101">
+                      <div class="room-num">Room 101</div>
+                      <div class="room-cat">Deluxe Suite</div>
+                      <span class="room-status-indicator status-occupied">Occupied</span>
+                    </div>
+                    <div class="room-cell" data-room="102">
+                      <div class="room-num">Room 102</div>
+                      <div class="room-cat">Executive King</div>
+                      <span class="room-status-indicator status-ready">Ready</span>
+                    </div>
+                    <div class="room-cell" data-room="103">
+                      <div class="room-num">Room 103</div>
+                      <div class="room-cat">Premier Twin</div>
+                      <span class="room-status-indicator status-cleaning">Cleaning</span>
+                    </div>
+                    <div class="room-cell" data-room="104">
+                      <div class="room-num">Room 104</div>
+                      <div class="room-cat">Deluxe Suite</div>
+                      <span class="room-status-indicator status-occupied">Occupied</span>
+                    </div>
+                    <div class="room-cell" data-room="201">
+                      <div class="room-num">Room 201</div>
+                      <div class="room-cat">Penthouse Villa</div>
+                      <span class="room-status-indicator status-occupied">Occupied</span>
+                    </div>
+                    <div class="room-cell" data-room="202">
+                      <div class="room-num">Room 202</div>
+                      <div class="room-cat">Executive King</div>
+                      <span class="room-status-indicator status-ready">Ready</span>
+                    </div>
+                    <div class="room-cell" data-room="203">
+                      <div class="room-num">Room 203</div>
+                      <div class="room-cat">Deluxe Suite</div>
+                      <span class="room-status-indicator status-maintenance">Maintenance</span>
+                    </div>
+                    <div class="room-cell" data-room="204">
+                      <div class="room-num">Room 204</div>
+                      <div class="room-cat">Sky Suite</div>
+                      <span class="room-status-indicator status-occupied">Occupied</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right: Unified OTA Stream -->
+                <div class="dash-panel">
+                  <div class="dash-panel-head">
+                    <div class="dash-panel-title">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                      <span>Unified Feed (AI Aggregated)</span>
+                    </div>
+                    <span style="font-size: 0.72rem; color: var(--accent-sage-light);">Instant Push</span>
+                  </div>
+
+                  <div class="ota-feed-list">
+                    <div class="ota-feed-item">
+                      <div class="ota-feed-left">
+                        <span class="ota-badge badge-direct">Direct</span>
+                        <div>
+                          <div class="ota-guest-name">Alexander Wright</div>
+                          <div style="font-size: 0.72rem; color: var(--text-muted);">Penthouse • 3 Nights • $940</div>
+                        </div>
+                      </div>
+                      <div class="ota-feed-right">Just now</div>
+                    </div>
+
+                    <div class="ota-feed-item">
+                      <div class="ota-feed-left">
+                        <span class="ota-badge badge-mmt">MakeMyTrip</span>
+                        <div>
+                          <div class="ota-guest-name">Rohit Malhotra</div>
+                          <div style="font-size: 0.72rem; color: var(--text-muted);">Exec King • 2 Nights • Room 102</div>
+                        </div>
+                      </div>
+                      <div class="ota-feed-right">4m ago</div>
+                    </div>
+
+                    <div class="ota-feed-item">
+                      <div class="ota-feed-left">
+                        <span class="ota-badge badge-goibibo">Goibibo</span>
+                        <div>
+                          <div class="ota-guest-name">Priya Sundaram</div>
+                          <div style="font-size: 0.72rem; color: var(--text-muted);">Deluxe Suite • Auto-assigned 101</div>
+                        </div>
+                      </div>
+                      <div class="ota-feed-right">18m ago</div>
+                    </div>
+
+                    <div class="ota-feed-item">
+                      <div class="ota-feed-left">
+                        <span class="ota-badge badge-booking">Booking.com</span>
+                        <div>
+                          <div class="ota-guest-name">Marcus Vance</div>
+                          <div style="font-size: 0.72rem; color: var(--text-muted);">Sky Suite • Paid in Advance</div>
+                        </div>
+                      </div>
+                      <div class="ota-feed-right">42m ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1 — Room & Availability Management -->
+    <section id="features-preview" style="background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+      <div class="container">
+        <div class="section-split">
+          <div class="reveal-on-scroll">
+            <div class="badge-pill">
+              <span class="dot"></span>
+              <span>Room & Availability Management</span>
+            </div>
+            <h2>Know your rooms, instantly.</h2>
+            <p class="lead">
+              Real-time view of which rooms are free, occupied, or need housekeeping — across all your properties, one screen.
+            </p>
+            <ul class="feature-list-check">
+              <li>
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong class="text-white">Live visual map:</strong>
+                  <span>Every room status updates the moment a booking, check-in, or check-out occurs.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong class="text-white">Zero double-booking:</strong>
+                  <span>One single source of truth across walk-ins, phone reservations, and all OTAs.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong class="text-white">Mobile housekeeping sync:</strong>
+                  <span>Cleaning and front-desk teams communicate status changes in one tap without intercom chaos.</span>
+                </div>
+              </li>
+            </ul>
+            <div style="margin-top: 32px;">
+              <a href="features.html#feature-rooms" class="btn btn-secondary">Explore Room Matrix →</a>
+            </div>
+          </div>
+
+          <div class="card-glass reveal-on-scroll">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h4 style="font-size: 1rem; color: #fff;">Multi-Property Floor Overview</h4>
+              <span class="badge-pill" style="margin-bottom:0; font-size: 0.75rem;">Live Broadcast</span>
+            </div>
+            <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-secondary);">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--status-ready);"></span> 12 Ready
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-secondary);">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--status-occupied);"></span> 28 Occupied
+              </span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text-secondary);">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--status-cleaning);"></span> 2 Cleaning
+              </span>
+            </div>
+            <img src="assets/images/hotel-villa.jpg" alt="Luxury hotel villa suite" style="border-radius: 12px; width: 100%; height: 260px; object-fit: cover; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="color: var(--text-white); font-weight: 500;">Villa Mountain Penthouse #301</span>
+              <span class="room-status-indicator status-ready">Ready for Check-In</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 — OTA Aggregation (AI) -->
+    <section>
+      <div class="container">
+        <div class="section-split reversed">
+          <div class="reveal-on-scroll">
+            <div class="badge-pill">
+              <span class="dot"></span>
+              <span>AI-Powered OTA Engine</span>
+            </div>
+            <h2>Stop checking your inbox for bookings.</h2>
+            <p class="lead">
+              Goibibo, MakeMyTrip, and other OTAs send bookings by email — scattered, easy to miss. Staycore’s AI pulls them all into one unified booking feed, automatically.
+            </p>
+            <ul class="feature-list-check">
+              <li>
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong class="text-white">Automated email ingestion:</strong>
+                  <span>No staff needed to manually copy-paste guest names, dates, or payment details.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong class="text-white">Smart conflict resolution:</strong>
+                  <span>Instantly holds inventory so two OTAs never sell the same bed at the same time.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong class="text-white">Cross-channel guest profiles:</strong>
+                  <span>Identify returning guests regardless of which platform they booked through.</span>
+                </div>
+              </li>
+            </ul>
+            <div style="margin-top: 32px;">
+              <a href="features.html#feature-ota" class="btn btn-secondary">See AI Aggregator Details →</a>
+            </div>
+          </div>
+
+          <!-- Interactive Before & After Simulator -->
+          <div class="comparison-card reveal-on-scroll">
+            <div class="comparison-toggle">
+              <button class="comp-btn active" data-view="view-after">After: Staycore AI Feed</button>
+              <button class="comp-btn" data-view="view-before">Before: Messy Inbox</button>
+            </div>
+
+            <!-- View: After Staycore -->
+            <div class="comp-view active" id="view-after">
+              <div class="unified-sim">
+                <div class="unified-sim-header">
+                  <span>✓ 100% Parsed & Unified Feed</span>
+                  <span>Auto-Assigned</span>
+                </div>
+                <div style="padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+                  <div class="ota-feed-item" style="border-left: 3px solid var(--accent-sage);">
+                    <div>
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="ota-badge badge-mmt">MakeMyTrip</span>
+                        <strong style="color: #fff;">Priya N.</strong>
+                      </div>
+                      <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 4px;">Deluxe Ocean #204 • Check-in Today 2:00 PM • Paid $320</div>
+                    </div>
+                    <span class="room-status-indicator status-ready">Room Ready</span>
+                  </div>
+
+                  <div class="ota-feed-item" style="border-left: 3px solid var(--accent-sage);">
+                    <div>
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="ota-badge badge-goibibo">Goibibo</span>
+                        <strong style="color: #fff;">Karan Sharma</strong>
+                      </div>
+                      <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 4px;">Exec Suite #102 • 2 Nights • Meal Plan Included</div>
+                    </div>
+                    <span class="room-status-indicator status-ready">Synced</span>
+                  </div>
+
+                  <div class="ota-feed-item" style="border-left: 3px solid var(--accent-sage);">
+                    <div>
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="ota-badge badge-booking">Booking.com</span>
+                        <strong style="color: #fff;">Elena Rostova</strong>
+                      </div>
+                      <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 4px;">Villa Suite #301 • Tomorrow Check-in</div>
+                    </div>
+                    <span class="room-status-indicator status-ready">Synced</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- View: Before Staycore -->
+            <div class="comp-view" id="view-before">
+              <div class="inbox-sim">
+                <div class="inbox-sim-header">
+                  <span>⚠ hotel-reservations@gmail.com (17 Unread)</span>
+                  <span>Easy to Miss</span>
+                </div>
+                <div class="inbox-sim-rows">
+                  <div class="inbox-sim-row unread">
+                    <div>
+                      <span class="unread-badge">NEW</span>
+                      <strong>partner-alert@goibibo.com</strong>
+                      <div style="font-size: 0.74rem; color: var(--text-muted);">Booking ID #GOB938201 Confirmation (Action Required)</div>
+                    </div>
+                    <span>10:41 AM</span>
+                  </div>
+                  <div class="inbox-sim-row unread">
+                    <div>
+                      <span class="unread-badge">NEW</span>
+                      <strong>extranet@makemytrip.com</strong>
+                      <div style="font-size: 0.74rem; color: var(--text-muted);">Reservation Update: Guest requested late checkout</div>
+                    </div>
+                    <span>09:15 AM</span>
+                  </div>
+                  <div class="inbox-sim-row">
+                    <div>
+                      <strong>noreply@booking.com</strong>
+                      <div style="font-size: 0.74rem; color: var(--text-muted);">Modified dates for confirmation #382910</div>
+                    </div>
+                    <span>Yesterday</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 14px;">
+              Staycore reads OTA confirmation emails via secure AI webhook, assigning rooms in 0.8 seconds.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 — Your Own Branded Website + Direct Bookings -->
+    <section style="background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);">
+      <div class="container">
+        <div class="section-split">
+          <div class="reveal-on-scroll">
+            <div class="badge-pill badge-gold">
+              <span class="dot"></span>
+              <span>Direct Booking Channel</span>
+            </div>
+            <h2>Your hotel deserves its own front door.</h2>
+            <p class="lead">
+              A custom-domain website for your hotel, built for SEO & AEO (so people — and AI search — find you). Guests book directly, you offer promo codes for direct bookings, and every booking flows straight into your dashboard.
+            </p>
+            <ul class="feature-list-check">
+              <li>
+                <span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span>
+                <div>
+                  <strong class="text-white">Custom domain, your brand:</strong>
+                  <span>Your luxury identity, high-res photography, and direct checkout on your own domain.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span>
+                <div>
+                  <strong class="text-white">Built-in SEO + AEO:</strong>
+                  <span>Structured schema for Google Hotel Search and AI assistants (Perplexity, ChatGPT, Gemini).</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span>
+                <div>
+                  <strong class="text-white">Direct booking engine:</strong>
+                  <span>Instant card and UPI payments without paying 18–25% commissions to middlemen.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span>
+                <div>
+                  <strong class="text-white">Promo codes & loyalty coupons:</strong>
+                  <span>Incentivize return guests with exclusive direct-booking discounts.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span>
+                <div>
+                  <strong class="text-white">Seamless Staycore sync:</strong>
+                  <span>All direct bookings land in your central calendar instantly alongside OTAs.</span>
+                </div>
+              </li>
+            </ul>
+            <div style="margin-top: 32px;">
+              <a href="website-only.html" class="btn btn-gold">Explore Website Solutions →</a>
+            </div>
+          </div>
+
+          <!-- Direct Booking Engine Interactive Mockup -->
+          <div class="booking-engine-preview reveal-on-scroll">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <div>
+                <h4 style="font-size: 1.1rem; color: #fff;">yourhotel.com</h4>
+                <span style="font-size: 0.74rem; color: var(--accent-sage-light);">Official Direct Booking Channel</span>
+              </div>
+              <span class="badge-pill" style="margin-bottom:0; font-size: 0.72rem; background: rgba(199,173,133,0.15); color: var(--accent-gold);">0% COMMISSION</span>
+            </div>
+
+            <!-- Booking Bar -->
+            <div class="b-engine-bar">
+              <div class="b-field">
+                <div class="b-field-label">Check-In / Out</div>
+                <div class="b-field-val">Oct 14 – Oct 18</div>
+              </div>
+              <div class="b-field">
+                <div class="b-field-label">Guests</div>
+                <div class="b-field-val">2 Adults, 1 Room</div>
+              </div>
+              <div class="b-field">
+                <div class="b-field-label">Promo Applied</div>
+                <div class="b-field-val" style="color: var(--accent-sage-light);">STAYDIRECT (-15%)</div>
+              </div>
+              <button class="btn btn-primary btn-sm" style="align-self: center;">Check Rates</button>
+            </div>
+
+            <!-- Room Option 1 -->
+            <div class="b-room-card">
+              <div class="b-room-info">
+                <div class="b-room-name">Signature Obsidian King Suite</div>
+                <div class="b-room-perks">Free High-speed Wi-Fi • Late Checkout • Welcome Drink</div>
+              </div>
+              <div class="b-room-pricing">
+                <div class="b-rate">$195 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">/ night</span></div>
+                <span class="b-save-tag">Direct savings: $42 vs OTA</span>
+              </div>
+            </div>
+
+            <!-- Room Option 2 -->
+            <div class="b-room-card">
+              <div class="b-room-info">
+                <div class="b-room-name">Penthouse Villa with Private Terrace</div>
+                <div class="b-room-perks">Mountain View • Daily Artisan Breakfast included</div>
+              </div>
+              <div class="b-room-pricing">
+                <div class="b-rate">$340 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">/ night</span></div>
+                <span class="b-save-tag">Direct savings: $78 vs OTA</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px; padding: 12px 16px; border-radius: 10px; background: rgba(94,129,114,0.1); border: 1px solid var(--accent-sage-border); font-size: 0.8rem; color: var(--text-secondary); text-align: center;">
+              ✨ Direct guests get instant confirmation SMS, personalized arrival note, and automated check-in keys.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 — Two Ways to Work With Us -->
+    <section>
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <span class="dot"></span>
+            <span>Tailored Architecture</span>
+          </div>
+          <h2>Two Ways to Work With Us</h2>
+          <p class="lead" style="margin: 0 auto;">
+            Whether you want a comprehensive operating system or simply want to escape OTA commissions with your own website, Staycore adapts to you.
+          </p>
+        </div>
+
+        <div class="plans-split-grid">
+          <!-- Card 1: Full Staycore Webapp -->
+          <div class="plan-card featured reveal-on-scroll">
+            <div>
+              <div class="badge-pill">Complete Operating System</div>
+              <h3 style="color: #fff; margin-bottom: 6px;">Full Staycore Webapp</h3>
+              <div class="plan-tagline">“Everything, in one dashboard.”</div>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">
+                The complete hotel cockpit. Includes live room management, AI-powered OTA email aggregator, multi-property support, staff housekeeping workflows, and your custom branded website.
+              </p>
+
+              <div class="plan-price-callout">
+                <div class="plan-price-label">Hotel Sizing</div>
+                <div class="plan-price-amount">Custom Quote</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Based on your room keys & properties. Zero direct commission.</div>
+              </div>
+
+              <ul class="feature-list-check" style="margin-bottom: 36px;">
+                <li><span class="check-icon">✓</span><span>Real-time room & availability management across properties</span></li>
+                <li><span class="check-icon">✓</span><span>AI-powered OTA booking aggregation (Goibibo, MakeMyTrip, etc.)</span></li>
+                <li><span class="check-icon">✓</span><span>Unified feed: direct, OTA, and walk-in bookings in one place</span></li>
+                <li><span class="check-icon">✓</span><span>Staff & housekeeping live status updates</span></li>
+                <li><span class="check-icon">✓</span><span>Includes branded custom-domain hotel website</span></li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="width: 100%;">Book a Free Demo</a>
+          </div>
+
+          <!-- Card 2: Website-Only Plan -->
+          <div class="plan-card reveal-on-scroll">
+            <div>
+              <div class="badge-pill badge-gold">Lightweight Entry</div>
+              <h3 style="color: #fff; margin-bottom: 6px;">Website-Only Plan</h3>
+              <div class="plan-tagline">“A booking-ready website for your hotel.”</div>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">
+                Just want a website that turns searchers into paying guests? We design, launch, and host your site with SEO/AEO and direct booking engine, giving you a lightweight portal to view bookings — no need to adopt the full webapp.
+              </p>
+
+              <div class="plan-price-callout">
+                <div class="plan-price-label">Fast Setup</div>
+                <div class="plan-price-amount">Flat Custom Rate</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Upgrade to the full Staycore webapp anytime as you scale.</div>
+              </div>
+
+              <ul class="feature-list-check" style="margin-bottom: 36px;">
+                <li><span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span><span>Custom-domain website tailored to your hotel's aesthetic</span></li>
+                <li><span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span><span>SEO + AEO optimization for Google and AI assistants</span></li>
+                <li><span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span><span>Direct booking engine with instant payment processing</span></li>
+                <li><span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span><span>Promo codes and coupon generator for direct guests</span></li>
+                <li><span class="check-icon" style="background: var(--accent-gold-soft); color: var(--accent-gold);">✓</span><span>Lightweight portal to track incoming direct reservations</span></li>
+              </ul>
+            </div>
+            <a href="website-only.html" class="btn btn-secondary" style="width: 100%;">Explore Website-Only Plan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5 — Why Staycore (Trust & Differentiators) -->
+    <section style="background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <span class="dot"></span>
+            <span>Why Hoteliers Choose Staycore</span>
+          </div>
+          <h2>Built for the reality of hotel operations.</h2>
+          <p class="lead" style="margin: 0 auto;">
+            No generic templates, no painful enterprise complexity, and no commissions taken from your hard-earned guest revenue.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+          <div class="card-glass reveal-on-scroll">
+            <div style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 12px;">01</div>
+            <h4 style="margin-bottom: 10px;">One dashboard instead of five tabs</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Stop toggling between Goibibo Extranet, MakeMyTrip Partner, email inbox, and a paper register. Everything flows into one screen.
+            </p>
+          </div>
+
+          <div class="card-glass reveal-on-scroll">
+            <div style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent-sage-light); margin-bottom: 12px;">02</div>
+            <h4 style="margin-bottom: 10px;">AI-powered, not manual data entry</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Confirmation emails are ingested and translated to bookings in seconds. Free your front-desk staff to focus on hospitality, not typing.
+            </p>
+          </div>
+
+          <div class="card-glass reveal-on-scroll">
+            <div style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 12px;">03</div>
+            <h4 style="margin-bottom: 10px;">You own your direct-booking channel</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              You own your guest emails, phone numbers, and booking history. Build lasting relationships and run repeat-guest promotions freely.
+            </p>
+          </div>
+
+          <div class="card-glass reveal-on-scroll">
+            <div style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--accent-sage-light); margin-bottom: 12px;">04</div>
+            <h4 style="margin-bottom: 10px;">Built for hotels of every size</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              From independent boutique properties to heritage homestays and multi-property resorts, Staycore scales without bloat.
+            </p>
+          </div>
+        </div>
+
+        <!-- Luxury Stats Counters (matching AMBER reference) -->
+        <div class="stats-grid reveal-on-scroll">
+          <div class="stat-item">
+            <div class="stat-num">0%</div>
+            <div class="stat-label">Commission on Direct Bookings</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Unified Dashboard for All Channels</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5x</div>
+            <div class="stat-label">Faster Front-Desk Updates</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Automated AI Confirmation Parsing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6 — CTA Banner -->
+    <section>
+      <div class="container">
+        <div class="cta-banner reveal-on-scroll">
+          <div class="badge-pill">
+            <span class="dot"></span>
+            <span>Get Started with Staycore</span>
+          </div>
+          <h2 style="font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 16px;">
+            See your hotel, all in one place.
+          </h2>
+          <p class="lead" style="margin: 0 auto 36px;">
+            Join independent hoteliers who have taken control of their bookings, automated their OTA feeds, and boosted their profit margins.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary btn-lg">Book a Free Demo</a>
+            <a href="pricing.html" class="btn btn-secondary btn-lg">View Plans & Pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">S</div>
+            <div class="brand-text">
+              <span class="brand-title">STAYCORE</span>
+              <span class="brand-subtitle">BY COAB</span>
+            </div>
+          </a>
+          <p>
+            One platform for every hotel booking — yours, theirs, and everyone else’s. Minimal, elegant, product-first hospitality technology.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul class="footer-links">
+            <li><a href="features.html">Dashboard Overview</a></li>
+            <li><a href="features.html#feature-rooms">Room Availability Matrix</a></li>
+            <li><a href="features.html#feature-ota">AI OTA Aggregator</a></li>
+            <li><a href="features.html#feature-website">Direct Booking Engine</a></li>
+            <li><a href="website-only.html">Website-Only Plan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Staycore</a></li>
+            <li><a href="about.html#why-coab">Why COAB Built This</a></li>
+            <li><a href="pricing.html">Pricing & Plans</a></li>
+            <li><a href="contact.html">Book a Demo</a></li>
+            <li><a href="contact.html#inquiries">General Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Sister Products</h5>
+          <ul class="footer-links">
+            <li><a href="https://coab.club" target="_blank" rel="noopener">COAB Studio</a></li>
+            <li><a href="#about-coab">SkoolPay (Cashless School Fees)</a></li>
+            <li><a href="#about-coab">SkoolWay (GPS/RFID Tracking)</a></li>
+            <li><a href="contact.html">Partner Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Staycore Technologies. All rights reserved.
+        </div>
+        <div class="coab-badge">
+          <span>Built by</span> <strong>COAB</strong>
+          <span style="display:inline-block; width:4px; height:4px; border-radius:50%; background:var(--accent-sage-light); margin: 0 4px;"></span>
+          <span style="color: var(--accent-sage-light);">Product-First Software</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
