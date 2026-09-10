@@ -1,39 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Volume2, VolumeX } from 'lucide-react';
 import HeroDashboardPreview from '../components/HeroDashboardPreview';
 import OtaComparison from '../components/OtaComparison';
 import DirectBookingPreview from '../components/DirectBookingPreview';
-import CinematicIntro from '../components/CinematicIntro';
 
 export default function Home({ onToast }) {
-  const [isIntroActive, setIsIntroActive] = useState(true);
-  const [justTransitioned, setJustTransitioned] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
-  const handleTransitionComplete = () => {
-    setIsIntroActive(false);
-    setJustTransitioned(true);
-    setTimeout(() => setJustTransitioned(false), 2000);
-  };
-
-  const handleReplayIntro = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setIsIntroActive(true);
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const nextMuted = !videoRef.current.muted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+    }
   };
 
   return (
     <main>
-      {/* 2x2 Cinematic Grid Intro & Continuous Morphing Transition */}
-      <CinematicIntro
-        isIntroActive={isIntroActive}
-        onTransitionComplete={handleTransitionComplete}
-        onReplay={handleReplayIntro}
-      />
-
       {/* Hero Section */}
-      <section className={`hero-section ${justTransitioned ? 'intro-transitioning' : ''}`}>
+      <section className="hero-section">
         <div className="hero-bg-media">
-          <img src="/assets/images/hero-suite.jpg" alt="Luxury hotel suite at night" />
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            poster="/assets/images/hero-suite.jpg"
+            className="hero-banner-video"
+          >
+            <source src="/assets/vedios/StayCore_hotel_promotional_video_20260910063621.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-video-overlay" />
         </div>
+
+        {/* Floating Sound Toggle */}
+        <button
+          type="button"
+          className="hero-video-sound-btn"
+          onClick={toggleMute}
+          title={isMuted ? 'Unmute promotional video' : 'Mute promotional video'}
+          aria-label={isMuted ? 'Unmute promotional video' : 'Mute promotional video'}
+        >
+          {isMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+          <span>{isMuted ? 'Sound Off' : 'Sound On'}</span>
+        </button>
 
         <div className="container hero-content">
           <div className="badge-pill">
