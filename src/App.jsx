@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
@@ -7,7 +7,6 @@ import Toast from './components/Toast';
 import Home from './pages/Home';
 import Features from './pages/Features';
 import WebsiteOnly from './pages/WebsiteOnly';
-import Pricing from './pages/Pricing';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import useSmoothScrollAndCards from './hooks/useSmoothScrollAndCards';
@@ -32,7 +31,7 @@ export default function App() {
         <Route path="/" element={<Home onToast={showToast} />} />
         <Route path="/features" element={<Features onToast={showToast} />} />
         <Route path="/website-only" element={<WebsiteOnly onToast={showToast} />} />
-        <Route path="/pricing" element={<Pricing onToast={showToast} />} />
+        <Route path="/pricing" element={<Navigate to="/contact" replace />} />
         <Route path="/about" element={<About onToast={showToast} />} />
         <Route path="/contact" element={<Contact onToast={showToast} />} />
       </Routes>

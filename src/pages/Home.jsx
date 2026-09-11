@@ -272,17 +272,9 @@ export default function Home({ onToast }) {
                 <div className="badge-pill">Complete Operating System</div>
                 <h3 style={{ color: '#fff', marginBottom: 6 }}>Full Staycore Webapp</h3>
                 <div className="plan-tagline">“Everything, in one dashboard.”</div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: 20 }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: 24 }}>
                   The complete hotel command center with live room matrix, AI OTA ingestion, and multi-property management.
                 </p>
-
-                <div className="plan-price-callout">
-                  <div className="plan-price-label">Hotel Sizing</div>
-                  <div className="plan-price-amount">Custom Quote</div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                    Tailored to your key count. Zero booking commission.
-                  </div>
-                </div>
 
                 <ul className="feature-list-check" style={{ marginBottom: 32 }}>
                   <li><span className="check-icon">✓</span><span>Real-time multi-property room matrix</span></li>
@@ -302,17 +294,9 @@ export default function Home({ onToast }) {
                 <div className="badge-pill badge-gold">Lightweight Entry</div>
                 <h3 style={{ color: '#fff', marginBottom: 6 }}>Website-Only Plan</h3>
                 <div className="plan-tagline">“A booking-ready website for your hotel.”</div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: 20 }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: 24 }}>
                   A bespoke hotel website with direct booking engine and a lightweight portal to view reservations.
                 </p>
-
-                <div className="plan-price-callout">
-                  <div className="plan-price-label">Fast Setup</div>
-                  <div className="plan-price-amount">Flat Custom Rate</div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                    Upgrade to the full Staycore webapp anytime.
-                  </div>
-                </div>
 
                 <ul className="feature-list-check" style={{ marginBottom: 32 }}>
                   <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Bespoke custom-domain hotel website</span></li>
@@ -417,8 +401,8 @@ export default function Home({ onToast }) {
               <Link to="/contact" className="btn btn-primary btn-lg">
                 Book a Free Demo
               </Link>
-              <Link to="/pricing" className="btn btn-secondary btn-lg">
-                View Plans & Pricing
+              <Link to="/features" className="btn btn-secondary btn-lg">
+                Explore All Features
               </Link>
             </div>
           </div>

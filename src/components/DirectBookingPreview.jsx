@@ -57,7 +57,7 @@ export default function DirectBookingPreview() {
       </div>
 
       <div style={{ marginTop: 16, padding: '12px 16px', borderRadius: 10, background: 'rgba(94,129,114,0.1)', border: '1px solid var(--accent-sage-border)', fontSize: '0.8rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
-        ✨ Direct guests get instant confirmation SMS, personalized arrival note, and automated check-in keys.
+        Direct guests get instant confirmation SMS, personalized arrival note, and automated check-in keys.
       </div>
     </div>
   );

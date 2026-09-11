@@ -54,11 +54,7 @@ export default function Navbar() {
                   Website-Only Plan
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/pricing" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                  Pricing
-                </NavLink>
-              </li>
+
               <li>
                 <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                   About
@@ -113,11 +109,7 @@ export default function Navbar() {
                 Website-Only Plan
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/pricing" onClick={closeMobile} className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>
-                Pricing
-              </NavLink>
-            </li>
+
             <li>
               <NavLink to="/about" onClick={closeMobile} className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>
                 About

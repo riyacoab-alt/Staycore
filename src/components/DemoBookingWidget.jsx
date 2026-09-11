@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Calendar as CalendarIcon, CheckCircle2 } from 'lucide-react';
+import { Calendar as CalendarIcon, CheckCircle2, MessageSquare, Phone } from 'lucide-react';
+
+const TARGET_PHONE_DISPLAY = '+91 96332 77995';
+const TARGET_PHONE_RAW = '919633277995';
 
 const DAYS = [
   { day: 28, disabled: true },
@@ -46,11 +49,42 @@ export default function DemoBookingWidget({ onToast }) {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const generateMessage = () => {
+    const interestLabel =
+      formData.interest === 'website-only'
+        ? 'Website-Only Plan (Direct Bookings & Simple Portal)'
+        : formData.interest === 'ota-aggregation'
+        ? 'AI OTA Aggregator & Email Syncing'
+        : 'Full Staycore Webapp (PMS + OTA + Website)';
+
+    return (
+      `*Staycore VIP Demo Walkthrough Request*\n\n` +
+      `*Full Name:* ${formData.name || 'N/A'}\n` +
+      `*Hotel / Property:* ${formData.hotel || 'N/A'}\n` +
+      `*Phone:* ${formData.phone || 'N/A'}\n` +
+      `*Email:* ${formData.email || 'N/A'}\n` +
+      `*Rooms / Keys:* ${formData.rooms || 'N/A'}\n` +
+      `*Primary Interest:* ${interestLabel}\n` +
+      `*Selected Slot:* ${selectedDate} at ${selectedTime}\n\n` +
+      `_Sent via Staycore Platform Contact Portal to ${TARGET_PHONE_DISPLAY}_`
+    );
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
+
+    const text = generateMessage();
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${TARGET_PHONE_RAW}&text=${encodeURIComponent(text)}`;
+
+    try {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    } catch (err) {
+      console.error('Window open failed:', err);
+    }
+
     if (onToast) {
-      onToast('VIP Demo scheduled successfully!');
+      onToast(`VIP Demo request dispatched to ${TARGET_PHONE_DISPLAY}!`);
     }
   };
 
@@ -122,27 +156,48 @@ export default function DemoBookingWidget({ onToast }) {
         {/* Right Side: Form / Confirmation */}
         <div>
           {isSubmitted ? (
-            <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-              <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(94, 129, 114, 0.2)', border: '1px solid var(--accent-sage-light)', color: 'var(--accent-sage-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-                <CheckCircle2 size={36} />
+            <div style={{ textAlign: 'center', padding: '36px 20px' }}>
+              <div style={{ width: 68, height: 68, borderRadius: '50%', background: 'rgba(94, 129, 114, 0.2)', border: '1px solid var(--accent-sage-light)', color: 'var(--accent-sage-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px' }}>
+                <CheckCircle2 size={38} />
               </div>
-              <h3 style={{ color: '#fff', marginBottom: 12, fontFamily: 'var(--font-heading)' }}>Demo Confirmed!</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: 20 }}>
-                Thank you, <strong>{formData.name || 'Valued Hotelier'}</strong>. Your personalized Staycore walkthrough for <strong>{formData.hotel || 'Your Property'}</strong> is reserved for:
+              <h3 style={{ color: '#fff', marginBottom: 8, fontFamily: 'var(--font-heading)' }}>VIP Walkthrough Dispatched!</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: 16, fontSize: '0.92rem' }}>
+                Thank you, <strong>{formData.name || 'Valued Hotelier'}</strong>. Your request for <strong>{formData.hotel || 'Your Hotel'}</strong> has been sent to our desk at <strong style={{ color: 'var(--accent-gold-light)' }}>{TARGET_PHONE_DISPLAY}</strong>.
               </p>
-              <div style={{ display: 'inline-block', padding: '12px 24px', borderRadius: 9999, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'var(--accent-gold-light)', fontWeight: 600, marginBottom: 24 }}>
+              
+              <div style={{ display: 'inline-block', padding: '10px 22px', borderRadius: 9999, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'var(--accent-gold-light)', fontWeight: 600, marginBottom: 24, fontSize: '0.9rem' }}>
                 {selectedDate} at {selectedTime}
               </div>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 28 }}>
-                A calendar invitation and walkthrough link have been dispatched to <strong>{formData.email || 'your email'}</strong>. Built by COAB.
-              </p>
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm"
-                onClick={() => setIsSubmitted(false)}
-              >
-                Schedule Another Time
-              </button>
+
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
+                <a
+                  href={`https://api.whatsapp.com/send?phone=${TARGET_PHONE_RAW}&text=${encodeURIComponent(generateMessage())}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary btn-sm"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                >
+                  <MessageSquare size={16} /> Open in WhatsApp
+                </a>
+                <a
+                  href={`tel:${TARGET_PHONE_DISPLAY.replace(/\s+/g, '')}`}
+                  className="btn btn-secondary btn-sm"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                >
+                  <Phone size={16} /> Call {TARGET_PHONE_DISPLAY}
+                </a>
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  className="btn btn-secondary btn-sm"
+                  onClick={() => setIsSubmitted(false)}
+                  style={{ opacity: 0.8 }}
+                >
+                  Schedule Another Time
+                </button>
+              </div>
             </div>
           ) : (
             <>
@@ -183,7 +238,7 @@ export default function DemoBookingWidget({ onToast }) {
                       type="tel"
                       required
                       className="form-control"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 96332 77995"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
@@ -230,12 +285,16 @@ export default function DemoBookingWidget({ onToast }) {
                   </select>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%', marginTop: 10 }}>
-                  Confirm VIP Demo Walkthrough
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg"
+                  style={{ width: '100%', marginTop: 10, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
+                >
+                  <MessageSquare size={18} /> Confirm VIP Demo Walkthrough
                 </button>
 
-                <p style={{ fontSize: '0.76rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: 16 }}>
-                  🔒 We respect your privacy. No spam. You will receive an instant Google Calendar invitation.
+                <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: 14 }}>
+                  All reservation details will be transmitted directly to our team at <strong>{TARGET_PHONE_DISPLAY}</strong>.
                 </p>
               </form>
             </>

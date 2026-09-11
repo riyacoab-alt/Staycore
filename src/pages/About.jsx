@@ -8,11 +8,23 @@ export default function About() {
       <section className="hero-section">
         <div className="hero-bg-media">
           <img src="/assets/images/hotel-villa.jpg" alt="Atmospheric hotel villa architecture" />
+          <div className="hero-video-overlay" />
         </div>
-        <div className="container hero-content">
-          <div className="badge-pill">
-            <span className="dot" />
-            <span>Our Origin & Purpose</span>
+        <div className="container hero-content" style={{ position: 'relative', zIndex: 1 }}>
+          <div
+            className="badge-pill"
+            style={{
+              background: 'rgba(15, 20, 26, 0.88)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid rgba(244, 208, 111, 0.55)',
+              color: '#FFF4CF',
+              fontWeight: 600,
+              boxShadow: '0 4px 18px rgba(0, 0, 0, 0.55)',
+              marginBottom: 24
+            }}
+          >
+            <span className="dot" style={{ backgroundColor: '#F4D06F', boxShadow: '0 0 10px #F4D06F' }} />
+            <span style={{ color: '#FFF8DE', letterSpacing: '0.06em', fontWeight: 600 }}>Our Origin & Purpose</span>
           </div>
           <h1 className="hero-title">
             Hotel bookings shouldn’t <br /><span>be this scattered.</span>
@@ -70,7 +82,7 @@ export default function About() {
                 Staycore unifies your rooms, OTA channels, and custom hotel website into one screen. You gain real-time visibility and a direct booking engine that eliminates middleman commissions.
               </p>
               <div style={{ padding: '14px 18px', borderRadius: 12, background: 'rgba(94,129,114,0.1)', border: '1px solid var(--accent-sage-border)', color: 'var(--accent-sage-light)', fontSize: '0.88rem' }}>
-                ✨ By owning your direct guest relationships and live inventory, your hotel operates with complete independence.
+                By owning your direct guest relationships and live inventory, your hotel operates with complete independence.
               </div>
             </div>
           </div>

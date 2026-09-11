@@ -234,8 +234,8 @@ export default function WebsiteOnly() {
               <Link to="/contact" className="btn btn-gold btn-lg">
                 Get Your Hotel Website
               </Link>
-              <Link to="/pricing" className="btn btn-secondary btn-lg">
-                Compare with Full Webapp
+              <Link to="/features" className="btn btn-secondary btn-lg">
+                Explore Full Webapp Features
               </Link>
             </div>
           </div>

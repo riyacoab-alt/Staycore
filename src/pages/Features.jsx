@@ -5,8 +5,15 @@ export default function Features() {
   return (
     <main>
       {/* Page Hero */}
-      <section className="hero-section" style={{ paddingBottom: 60 }}>
-        <div className="container text-center" style={{ maxWidth: 920 }}>
+      <section className="hero-section">
+        <div className="hero-bg-media">
+          <img
+            src="/assets/images/features-banner.png"
+            alt="Staycore Unified Platform Capabilities — Luxury Suite Showcase"
+          />
+          <div className="hero-video-overlay" />
+        </div>
+        <div className="container hero-content text-center" style={{ maxWidth: 920, position: 'relative', zIndex: 1 }}>
           <div className="badge-pill">
             <span className="dot" />
             <span>Platform Capabilities</span>
@@ -17,6 +24,14 @@ export default function Features() {
           <p className="hero-sub">
             From the front desk to the OTAs to your own website — Staycore brings it all into one place. Eliminate manual friction, synchronize room availability, and empower your hospitality team.
           </p>
+          <div className="hero-cta-group" style={{ justifyContent: 'center' }}>
+            <Link to="/contact" className="btn btn-primary btn-lg">
+              Book a Free Live Demo
+            </Link>
+            <a href="#feature-rooms" className="btn btn-secondary btn-lg">
+              Explore Capabilities
+            </a>
+          </div>
         </div>
       </section>
 
@@ -264,8 +279,8 @@ export default function Features() {
               <Link to="/contact" className="btn btn-primary btn-lg">
                 Book a Free Live Demo
               </Link>
-              <Link to="/pricing" className="btn btn-secondary btn-lg">
-                Compare Pricing Plans
+              <Link to="/website-only" className="btn btn-secondary btn-lg">
+                Explore Website-Only Plan
               </Link>
             </div>
           </div>

@@ -10,8 +10,8 @@ const FAQS = [
     a: 'No commission — that’s the whole point. You keep 100% of your guest room revenue on all direct bookings made through your custom-domain website. Standard payment processing fees from your merchant gateway (e.g. Stripe or Razorpay) apply directly to your account.'
   },
   {
-    q: 'Is there a setup fee?',
-    a: 'Our onboarding package includes domain configuration, custom website design, SEO & AEO optimization, room cataloging, and staff training. Depending on the size of your property, setup is either included in your contract or offered as a one-time onboarding fee. Book a demo to get transparent details.'
+    q: 'How does onboarding and property setup work?',
+    a: 'Our engineering team handles end-to-end property setup: custom domain configuration, bespoke hotel website design, SEO & search optimization, room cataloging, OTA connection, and staff walkthroughs. Everything is tailored directly to your property so your team is up and running smoothly.'
   },
   {
     q: 'Which OTAs does Staycore support?',
