@@ -92,8 +92,8 @@ Spins up a local server to preview the production build output from `dist/`.
   - Muted Sage Green: `--accent-sage` (`#5e8172`), `--accent-sage-light` (`#779c8d`)
   - Warm Champagne Gold: `--accent-gold` (`#c7ad85`), `--accent-gold-light` (`#e0cca8`)
 - **Typography**:
-  - Headings: `Playfair Display` (Editorial Luxury Serif)
-  - Interface & Body: `Plus Jakarta Sans` (Clean, High-legibility Sans-Serif)
+  - Headings: `Manrope` (Clean, Modern High-Tech SaaS Headings)
+  - Interface & Body: `Inter` (Crisp, High-legibility Modern SaaS Body)
 - **Glassmorphism**: Translucent card panels with backdrop blur (`16px–24px`) and micro-borders (`1px solid rgba(255, 255, 255, 0.07)`).
 
 ---

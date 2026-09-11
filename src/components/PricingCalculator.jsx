@@ -18,7 +18,7 @@ export default function PricingCalculator() {
     <div className="calculator-card">
       <div className="calc-slider-header">
         <span style={{ fontWeight: 600, color: '#fff', fontSize: '1.1rem' }}>Number of Rooms / Keys</span>
-        <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--accent-sage-light)', fontWeight: 600 }}>
+        <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', color: 'var(--accent-sage-light)', fontWeight: 700 }}>
           {rooms} Rooms
         </span>
       </div>

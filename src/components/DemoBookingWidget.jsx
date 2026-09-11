@@ -126,7 +126,7 @@ export default function DemoBookingWidget({ onToast }) {
               <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(94, 129, 114, 0.2)', border: '1px solid var(--accent-sage-light)', color: 'var(--accent-sage-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
                 <CheckCircle2 size={36} />
               </div>
-              <h3 style={{ color: '#fff', marginBottom: 12, fontFamily: 'var(--font-serif)' }}>Demo Confirmed!</h3>
+              <h3 style={{ color: '#fff', marginBottom: 12, fontFamily: 'var(--font-heading)' }}>Demo Confirmed!</h3>
               <p style={{ color: 'var(--text-secondary)', marginBottom: 20 }}>
                 Thank you, <strong>{formData.name || 'Valued Hotelier'}</strong>. Your personalized Staycore walkthrough for <strong>{formData.hotel || 'Your Property'}</strong> is reserved for:
               </p>

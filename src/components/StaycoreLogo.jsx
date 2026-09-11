@@ -88,7 +88,7 @@ export default function StaycoreLogo({
         <span
           className="staycore-brand-name"
           style={{
-            fontFamily: "var(--font-sans), 'Plus Jakarta Sans', sans-serif",
+            fontFamily: "var(--font-heading), 'Manrope', sans-serif",
             fontWeight: 800,
             color: '#ffffff',
             lineHeight: 1,
@@ -101,7 +101,7 @@ export default function StaycoreLogo({
           <span
             className="staycore-brand-sub"
             style={{
-              fontFamily: "var(--font-sans), 'Plus Jakarta Sans', sans-serif",
+              fontFamily: "var(--font-body), 'Inter', sans-serif",
               fontWeight: 500,
               textTransform: 'uppercase',
               color: 'var(--text-muted)',

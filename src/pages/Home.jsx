@@ -59,7 +59,7 @@ export default function Home({ onToast }) {
           </h1>
 
           <p className="hero-sub">
-            See every room, every booking, every OTA — in one dashboard. Eliminate double bookings, auto-sync Goibibo and MakeMyTrip confirmations, and capture 0% commission direct reservations.
+            One unified dashboard for all your rooms, bookings, and OTAs. Eliminate double bookings, auto-sync OTA emails, and capture 0% commission direct reservations.
           </p>
 
           <div className="hero-cta-group">
@@ -86,28 +86,28 @@ export default function Home({ onToast }) {
               </div>
               <h2>Know your rooms, instantly.</h2>
               <p className="lead">
-                Real-time view of which rooms are free, occupied, or need housekeeping — across all your properties, one screen.
+                Real-time view of which rooms are free, occupied, or cleaning — across all your properties in one place.
               </p>
               <ul className="feature-list-check">
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Live visual map:</strong>{' '}
-                    <span>Every room status updates the moment a booking, check-in, or check-out occurs.</span>
+                    <strong className="text-white">Live Visual Matrix:</strong>{' '}
+                    <span>Instant room status updates on check-ins, check-outs, and cleaning.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Zero double-booking:</strong>{' '}
-                    <span>One single source of truth across walk-ins, phone reservations, and all OTAs.</span>
+                    <strong className="text-white">Zero Double Bookings:</strong>{' '}
+                    <span>Synchronized availability across walk-ins, phone calls, and all OTAs.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Mobile housekeeping sync:</strong>{' '}
-                    <span>Cleaning and front-desk teams communicate status changes in one tap without intercom chaos.</span>
+                    <strong className="text-white">Mobile Housekeeping:</strong>{' '}
+                    <span>Front-desk and cleaning teams stay aligned with one-tap status toggles.</span>
                   </div>
                 </li>
               </ul>
@@ -157,30 +157,30 @@ export default function Home({ onToast }) {
                 <span className="dot" />
                 <span>AI-Powered OTA Engine</span>
               </div>
-              <h2>Stop checking your inbox for bookings.</h2>
+              <h2>Every OTA booking in one feed.</h2>
               <p className="lead">
-                Goibibo, MakeMyTrip, and other OTAs send bookings by email — scattered, easy to miss. Staycore’s AI pulls them all into one unified booking feed, automatically.
+                Stop checking separate emails and extranet tabs. Staycore’s AI captures and organizes your OTA confirmations automatically.
               </p>
               <ul className="feature-list-check">
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Automated email ingestion:</strong>{' '}
-                    <span>No staff needed to manually copy-paste guest names, dates, or payment details.</span>
+                    <strong className="text-white">Instant AI Extraction:</strong>{' '}
+                    <span>Parses guest names, stay dates, and payment totals from OTA emails in seconds.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Smart conflict resolution:</strong>{' '}
-                    <span>Instantly holds inventory so two OTAs never sell the same bed at the same time.</span>
+                    <strong className="text-white">Smart Conflict Guard:</strong>{' '}
+                    <span>Auto-holds inventory so multiple channels never book the same room twice.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Cross-channel guest profiles:</strong>{' '}
-                    <span>Identify returning guests regardless of which platform they booked through.</span>
+                    <strong className="text-white">Unified Guest Profiles:</strong>{' '}
+                    <span>Track guest history across MakeMyTrip, Goibibo, and direct reservations.</span>
                   </div>
                 </li>
               </ul>
@@ -207,42 +207,35 @@ export default function Home({ onToast }) {
               </div>
               <h2>Your hotel deserves its own front door.</h2>
               <p className="lead">
-                A custom-domain website for your hotel, built for SEO & AEO (so people — and AI search — find you). Guests book directly, you offer promo codes for direct bookings, and every booking flows straight into your dashboard.
+                A custom-domain website optimized for Google and AI search, with direct checkout that eliminates middleman commissions.
               </p>
               <ul className="feature-list-check">
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Custom domain, your brand:</strong>{' '}
-                    <span>Your luxury identity, high-res photography, and direct checkout on your own domain.</span>
+                    <strong className="text-white">Custom Domain & Brand:</strong>{' '}
+                    <span>Showcase suites, amenities, and room rates with high-speed direct checkout.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Built-in SEO + AEO:</strong>{' '}
-                    <span>Structured schema for Google Hotel Search and AI assistants (Perplexity, ChatGPT, Gemini).</span>
+                    <strong className="text-white">0% Commission Engine:</strong>{' '}
+                    <span>Keep 100% of guest revenue with instant card and UPI payment processing.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Direct booking engine:</strong>{' '}
-                    <span>Instant card and UPI payments without paying 18–25% commissions to middlemen.</span>
+                    <strong className="text-white">Google & AI Search Ready:</strong>{' '}
+                    <span>Structured schema ensures visibility on Google Hotel Search, ChatGPT, and Perplexity.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Promo codes & loyalty coupons:</strong>{' '}
-                    <span>Incentivize return guests with exclusive direct-booking discounts.</span>
-                  </div>
-                </li>
-                <li>
-                  <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
-                  <div>
-                    <strong className="text-white">Seamless Staycore sync:</strong>{' '}
-                    <span>All direct bookings land in your central calendar instantly alongside OTAs.</span>
+                    <strong className="text-white">Promo Codes & Auto-Sync:</strong>{' '}
+                    <span>Incentivize return guests while direct reservations flow straight into your dashboard.</span>
                   </div>
                 </li>
               </ul>
@@ -268,7 +261,7 @@ export default function Home({ onToast }) {
             </div>
             <h2>Two Ways to Work With Us</h2>
             <p className="lead" style={{ margin: '0 auto' }}>
-              Whether you want a comprehensive operating system or simply want to escape OTA commissions with your own website, Staycore adapts to you.
+              Choose a complete operating system or start with a commission-free website. Upgrade anytime.
             </p>
           </div>
 
@@ -279,24 +272,23 @@ export default function Home({ onToast }) {
                 <div className="badge-pill">Complete Operating System</div>
                 <h3 style={{ color: '#fff', marginBottom: 6 }}>Full Staycore Webapp</h3>
                 <div className="plan-tagline">“Everything, in one dashboard.”</div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: 24 }}>
-                  The complete hotel cockpit. Includes live room management, AI-powered OTA email aggregator, multi-property support, staff housekeeping workflows, and your custom branded website.
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: 20 }}>
+                  The complete hotel command center with live room matrix, AI OTA ingestion, and multi-property management.
                 </p>
 
                 <div className="plan-price-callout">
                   <div className="plan-price-label">Hotel Sizing</div>
                   <div className="plan-price-amount">Custom Quote</div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                    Based on your room keys & properties. Zero direct commission.
+                    Tailored to your key count. Zero booking commission.
                   </div>
                 </div>
 
-                <ul className="feature-list-check" style={{ marginBottom: 36 }}>
-                  <li><span className="check-icon">✓</span><span>Real-time room & availability management across properties</span></li>
-                  <li><span className="check-icon">✓</span><span>AI-powered OTA booking aggregation (Goibibo, MakeMyTrip, etc.)</span></li>
-                  <li><span className="check-icon">✓</span><span>Unified feed: direct, OTA, and walk-in bookings in one place</span></li>
-                  <li><span className="check-icon">✓</span><span>Staff & housekeeping live status updates</span></li>
-                  <li><span className="check-icon">✓</span><span>Includes branded custom-domain hotel website</span></li>
+                <ul className="feature-list-check" style={{ marginBottom: 32 }}>
+                  <li><span className="check-icon">✓</span><span>Real-time multi-property room matrix</span></li>
+                  <li><span className="check-icon">✓</span><span>AI automated OTA confirmation parsing</span></li>
+                  <li><span className="check-icon">✓</span><span>Unified calendar for direct, OTA & walk-in guests</span></li>
+                  <li><span className="check-icon">✓</span><span>Includes custom branded hotel website</span></li>
                 </ul>
               </div>
               <Link to="/contact" className="btn btn-primary" style={{ width: '100%' }}>
@@ -310,24 +302,23 @@ export default function Home({ onToast }) {
                 <div className="badge-pill badge-gold">Lightweight Entry</div>
                 <h3 style={{ color: '#fff', marginBottom: 6 }}>Website-Only Plan</h3>
                 <div className="plan-tagline">“A booking-ready website for your hotel.”</div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: 24 }}>
-                  Just want a website that turns searchers into paying guests? We design, launch, and host your site with SEO/AEO and direct booking engine, giving you a lightweight portal to view bookings — no need to adopt the full webapp.
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: 20 }}>
+                  A bespoke hotel website with direct booking engine and a lightweight portal to view reservations.
                 </p>
 
                 <div className="plan-price-callout">
                   <div className="plan-price-label">Fast Setup</div>
                   <div className="plan-price-amount">Flat Custom Rate</div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                    Upgrade to the full Staycore webapp anytime as you scale.
+                    Upgrade to the full Staycore webapp anytime.
                   </div>
                 </div>
 
-                <ul className="feature-list-check" style={{ marginBottom: 36 }}>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Custom-domain website tailored to your hotel's aesthetic</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>SEO + AEO optimization for Google and AI assistants</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Direct booking engine with instant payment processing</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Promo codes and coupon generator for direct guests</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Lightweight portal to track incoming direct reservations</span></li>
+                <ul className="feature-list-check" style={{ marginBottom: 32 }}>
+                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Bespoke custom-domain hotel website</span></li>
+                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Direct booking engine with 0% commission</span></li>
+                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>SEO & AI search visibility (ChatGPT & Google)</span></li>
+                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Lightweight portal to track incoming guests</span></li>
                 </ul>
               </div>
               <Link to="/website-only" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -346,42 +337,42 @@ export default function Home({ onToast }) {
               <span className="dot" />
               <span>Why Hoteliers Choose Staycore</span>
             </div>
-            <h2>Built for the reality of hotel operations.</h2>
+            <h2>Built for real hotel operations.</h2>
             <p className="lead" style={{ margin: '0 auto' }}>
-              No generic templates, no painful enterprise complexity, and no commissions taken from your hard-earned guest revenue.
+              No generic templates or enterprise clutter — just clear control over your rooms and guest revenue.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--accent-gold)', marginBottom: 12 }}>01</div>
-              <h4 style={{ marginBottom: 10 }}>One dashboard instead of five tabs</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Stop toggling between Goibibo Extranet, MakeMyTrip Partner, email inbox, and a paper register. Everything flows into one screen.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: 12 }}>01</div>
+              <h4 style={{ marginBottom: 8 }}>One Unified Screen</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Replace five open extranet tabs and registers with a single live operational dashboard.
               </p>
             </div>
 
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--accent-sage-light)', marginBottom: 12 }}>02</div>
-              <h4 style={{ marginBottom: 10 }}>AI-powered, not manual data entry</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Confirmation emails are ingested and translated to bookings in seconds. Free your front-desk staff to focus on hospitality, not typing.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-sage-light)', marginBottom: 12 }}>02</div>
+              <h4 style={{ marginBottom: 8 }}>AI Confirmation Parsing</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Incoming booking emails are parsed and added to your calendar in seconds without manual typing.
               </p>
             </div>
 
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--accent-gold)', marginBottom: 12 }}>03</div>
-              <h4 style={{ marginBottom: 10 }}>You own your direct-booking channel</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                You own your guest emails, phone numbers, and booking history. Build lasting relationships and run repeat-guest promotions freely.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: 12 }}>03</div>
+              <h4 style={{ marginBottom: 8 }}>Direct Revenue Ownership</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Keep 100% of direct bookings and build lasting guest relationships without OTA cuts.
               </p>
             </div>
 
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--accent-sage-light)', marginBottom: 12 }}>04</div>
-              <h4 style={{ marginBottom: 10 }}>Built for hotels of every size</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                From independent boutique properties to heritage homestays and multi-property resorts, Staycore scales without bloat.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-sage-light)', marginBottom: 12 }}>04</div>
+              <h4 style={{ marginBottom: 8 }}>Scales With Your Property</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Built for boutique stays, heritage retreats, and multi-property resorts alike.
               </p>
             </div>
           </div>

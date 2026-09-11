@@ -8,7 +8,11 @@ export default function WebsiteOnly() {
       {/* Page Hero */}
       <section className="hero-section">
         <div className="hero-bg-media">
-          <img src="/assets/images/hotel-lounge.jpg" alt="Luxury boutique hotel ambiance" />
+          <img
+            src="/assets/images/website-only-banner.png"
+            alt="The Aurelia Hotel & Resort — Website-Only Plan banner showcase"
+          />
+          <div className="hero-video-overlay" />
         </div>
         <div className="container hero-content">
           <div className="badge-pill badge-gold">
@@ -49,22 +53,22 @@ export default function WebsiteOnly() {
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">A professional online presence:</strong>{' '}
-                    <span>A bespoke, elegant website that elevates your brand and outshines generic template directories.</span>
+                    <strong className="text-white">Bespoke Hotel Identity:</strong>{' '}
+                    <span>An elegant custom-domain presence that outshines generic template directories.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">The ability to take direct bookings:</strong>{' '}
-                    <span>Stop paying 18–25% to third-party portals for every returning guest or word-of-mouth referral.</span>
+                    <strong className="text-white">0% Commission Bookings:</strong>{' '}
+                    <span>Keep 100% of guest payments instead of surrendering 18–25% to third-party portals.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">A simple way to see those bookings:</strong>{' '}
-                    <span>A streamlined, clutter-free portal to view dates, guests, and payments without managing a full PMS dashboard.</span>
+                    <strong className="text-white">Simple Bookings View:</strong>{' '}
+                    <span>Track guest details, stay dates, and payment totals in a clean 30-second interface.</span>
                   </div>
                 </li>
               </ul>
@@ -73,7 +77,7 @@ export default function WebsiteOnly() {
             <div className="card-glass">
               <h4 style={{ color: '#fff', marginBottom: 16 }}>The Lightweight Portal Advantage</h4>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 20 }}>
-                Unlike complex legacy enterprise software that requires weeks of staff training, the Website-Only Portal takes 30 seconds to learn.
+                Zero training required. A focused dashboard showing incoming direct reservations at a glance.
               </p>
               <div style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: 20 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: 12, marginBottom: 12 }}>
@@ -104,7 +108,7 @@ export default function WebsiteOnly() {
             </div>
             <h2>What’s Included</h2>
             <p className="lead" style={{ margin: '0 auto' }}>
-              Everything required to turn internet searches and AI queries into direct paying guests.
+              Everything required to turn search traffic and AI queries into direct paying guests.
             </p>
           </div>
 
@@ -114,9 +118,9 @@ export default function WebsiteOnly() {
               <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--accent-sage-soft)', border: '1px solid var(--accent-sage-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage-light)', marginBottom: 20 }}>
                 <Globe size={20} />
               </div>
-              <h4 style={{ marginBottom: 12 }}>Custom-domain website</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Built around your hotel’s brand, photos, room suites, amenities, and location. Hosted on ultra-fast edge infrastructure with SSL security.
+              <h4 style={{ marginBottom: 10 }}>Custom-Domain Website</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Bespoke high-speed site showcasing your rooms, suites, and amenities on your private brand domain.
               </p>
             </div>
 
@@ -125,9 +129,9 @@ export default function WebsiteOnly() {
               <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--accent-gold-soft)', border: '1px solid var(--accent-gold-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', marginBottom: 20 }}>
                 <TrendingUp size={20} />
               </div>
-              <h4 style={{ marginBottom: 12 }}>SEO + AEO optimization</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                So your hotel shows up in traditional Google searches and AI-assistant answers (ChatGPT, Perplexity, Gemini) when travellers ask for recommendations.
+              <h4 style={{ marginBottom: 10 }}>SEO & AI Search (AEO)</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Schema optimization ensuring top recommendations on Google, ChatGPT, and Perplexity searches.
               </p>
             </div>
 
@@ -136,9 +140,9 @@ export default function WebsiteOnly() {
               <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--accent-sage-soft)', border: '1px solid var(--accent-sage-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage-light)', marginBottom: 20 }}>
                 <CreditCard size={20} />
               </div>
-              <h4 style={{ marginBottom: 12 }}>Direct booking engine</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Guests can check room availability and book directly on your site with mobile-optimized checkout and multiple payment gateways.
+              <h4 style={{ marginBottom: 10 }}>Direct Booking Engine</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Mobile-optimized checkout accepting cards and instant UPI payments with 0% platform commission.
               </p>
             </div>
 
@@ -147,9 +151,9 @@ export default function WebsiteOnly() {
               <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--accent-gold-soft)', border: '1px solid var(--accent-gold-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', marginBottom: 20 }}>
                 <Tag size={20} />
               </div>
-              <h4 style={{ marginBottom: 12 }}>Promo codes / discount codes</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Reward guests who book direct instead of through an OTA. Generate weekend perks, corporate discount codes, or repeat-guest coupons easily.
+              <h4 style={{ marginBottom: 10 }}>Promo & Coupon Engine</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Create custom discount codes and seasonal perks to incentivize guests to book directly with you.
               </p>
             </div>
 
@@ -158,9 +162,9 @@ export default function WebsiteOnly() {
               <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--accent-sage-soft)', border: '1px solid var(--accent-sage-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage-light)', marginBottom: 20 }}>
                 <Layout size={20} />
               </div>
-              <h4 style={{ marginBottom: 12 }}>Lightweight bookings portal</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                A simple, clean login where you can see who’s booked, when, and for how long (without the full Staycore dashboard’s complexity).
+              <h4 style={{ marginBottom: 10 }}>Lightweight Bookings View</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                A focused portal to monitor upcoming check-ins, guest payments, and room selections effortlessly.
               </p>
             </div>
           </div>
@@ -180,34 +184,34 @@ export default function WebsiteOnly() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: 'var(--accent-sage-light)', marginBottom: 12 }}>01</div>
-              <h4 style={{ marginBottom: 10 }}>Build & Launch</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                We build and launch your custom hotel website on your private domain with your exact branding.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-sage-light)', marginBottom: 12 }}>01</div>
+              <h4 style={{ marginBottom: 8 }}>Build & Launch</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                We design and launch your custom website on your private domain with your exact branding.
               </p>
             </div>
 
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: 'var(--accent-gold)', marginBottom: 12 }}>02</div>
-              <h4 style={{ marginBottom: 10 }}>Direct Discovery</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Guests find you via search engines and AI assistants and book directly without paying middleman markups.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: 12 }}>02</div>
+              <h4 style={{ marginBottom: 8 }}>Direct Discovery</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Guests find you via Google and AI assistants, booking directly with zero middleman markup.
               </p>
             </div>
 
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: 'var(--accent-sage-light)', marginBottom: 12 }}>03</div>
-              <h4 style={{ marginBottom: 10 }}>Track Bookings</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                You log into your simple portal anytime to see upcoming guests, check-in dates, and payment status.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-sage-light)', marginBottom: 12 }}>03</div>
+              <h4 style={{ marginBottom: 8 }}>Track Bookings</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Log into your clean portal anytime to see upcoming guests, check-in dates, and payment status.
               </p>
             </div>
 
             <div className="card-glass">
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: 'var(--accent-gold)', marginBottom: 12 }}>04</div>
-              <h4 style={{ marginBottom: 10 }}>Seamless Upgrade</h4>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Upgrade to the full Staycore webapp anytime you’re ready for OTA aggregation and full room management.
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--accent-gold)', marginBottom: 12 }}>04</div>
+              <h4 style={{ marginBottom: 8 }}>Seamless Upgrade</h4>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                Upgrade to the full Staycore webapp whenever you're ready for automated multi-channel aggregation.
               </p>
             </div>
           </div>

@@ -31,22 +31,38 @@ export default function Features() {
               </div>
               <h2>Know your rooms, at a glance.</h2>
               <p className="lead" style={{ marginBottom: 24 }}>
-                No more calling the front desk or flipping through a register to know what’s free. Staycore gives you a live, visual map of every room across every property you run — free, occupied, checking out today, or under housekeeping — updated in real time the moment a booking, check-in, or check-out happens.
+                A live visual map of every room across all your properties — free, occupied, or cleaning — updated in real time.
               </p>
 
-              <h4 style={{ marginTop: 28, marginBottom: 14, color: 'var(--accent-gold-light)' }}>How it works:</h4>
-              <ol style={{ color: 'var(--text-secondary)', paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.95rem' }}>
-                <li><strong>Automatic Status Updates:</strong> Every booking — direct, OTA, or walk-in — updates the room status automatically.</li>
-                <li><strong>Live Grid Dashboard:</strong> Your dashboard shows a live grid: room number, status, guest name, and check-out date.</li>
-                <li><strong>1-Tap Staff Workflows:</strong> Staff mark rooms as “ready,” “cleaning,” or “maintenance” in one single tap.</li>
-              </ol>
-
-              <h4 style={{ marginTop: 28, marginBottom: 14, color: 'var(--accent-sage-light)' }}>Key benefits:</h4>
               <ul className="feature-list-check">
-                <li><span className="check-icon">✓</span><span>Real-time room status across single or multiple properties</span></li>
-                <li><span className="check-icon">✓</span><span>No double-booking — one source of truth for availability</span></li>
-                <li><span className="check-icon">✓</span><span>Housekeeping and front-desk teams see the same live data</span></li>
-                <li><span className="check-icon">✓</span><span>Works on desktop and mobile for on-the-go staff</span></li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Live Status Matrix:</strong>{' '}
+                    <span>Instant room status updates the second a guest checks in, checks out, or extends.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Zero Double Bookings:</strong>{' '}
+                    <span>One single source of truth across walk-ins, phone reservations, and all OTAs.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Mobile Housekeeping:</strong>{' '}
+                    <span>1-tap cleaning and readiness updates for front desk and housekeeping teams.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Multi-Property View:</strong>{' '}
+                    <span>Switch between different wings, floors, and independent resort villas seamlessly.</span>
+                  </div>
+                </li>
               </ul>
             </div>
 
@@ -80,24 +96,40 @@ export default function Features() {
                 <span className="dot" />
                 <span>Feature 02</span>
               </div>
-              <h2>Every OTA booking, in one feed — not your inbox.</h2>
+              <h2>Every OTA booking in one live feed.</h2>
               <p className="lead" style={{ marginBottom: 24 }}>
-                Hotels listed on Goibibo, MakeMyTrip, and other OTAs today get bookings scattered across separate emails and separate partner dashboards — nothing pulls them together. Staycore’s AI reads and organizes these bookings automatically, so instead of checking five inboxes, you check one feed.
+                Staycore’s AI automatically reads and organizes incoming OTA emails so you never have to check multiple extranet portals.
               </p>
 
-              <h4 style={{ marginTop: 28, marginBottom: 14, color: 'var(--accent-gold-light)' }}>How it works:</h4>
-              <ol style={{ color: 'var(--text-secondary)', paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.95rem' }}>
-                <li><strong>One-Time Connect:</strong> Connect your OTA accounts/email once during initial setup.</li>
-                <li><strong>Instant AI Detection:</strong> Staycore’s AI detects and parses booking confirmations as they arrive.</li>
-                <li><strong>Unified Dashboard Feed:</strong> Every booking appears in your unified dashboard — guest name, dates, room type, OTA source — alongside your direct bookings.</li>
-              </ol>
-
-              <h4 style={{ marginTop: 28, marginBottom: 14, color: 'var(--accent-sage-light)' }}>Key benefits:</h4>
               <ul className="feature-list-check">
-                <li><span className="check-icon">✓</span><span>One unified booking feed across all OTAs (Goibibo, MakeMyTrip, Booking.com, Agoda)</span></li>
-                <li><span className="check-icon">✓</span><span>No manual copy-pasting from emails into a register</span></li>
-                <li><span className="check-icon">✓</span><span>Fewer missed or late-noticed bookings</span></li>
-                <li><span className="check-icon">✓</span><span>Full visibility of occupancy across every channel, not just your own</span></li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Instant AI Email Parsing:</strong>{' '}
+                    <span>Extracts guest names, stay dates, and payment totals from OTA emails in seconds.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Auto-Hold Inventory:</strong>{' '}
+                    <span>Locks availability instantly so two platforms never sell the same room simultaneously.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Unified Chronological Feed:</strong>{' '}
+                    <span>All bookings appear side-by-side whether from MakeMyTrip, Goibibo, or walk-ins.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon">✓</span>
+                  <div>
+                    <strong className="text-white">Repeat Guest History:</strong>{' '}
+                    <span>Recognize returning guests regardless of which platform they booked through.</span>
+                  </div>
+                </li>
               </ul>
             </div>
 
@@ -147,7 +179,7 @@ export default function Features() {
               </div>
 
               <div style={{ marginTop: 24, padding: 16, background: 'rgba(0,0,0,0.3)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.06)', fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
-                🔒 <strong>Enterprise Security:</strong> Bank-grade encryption for all guest data. Fully compliant with hospitality data privacy guidelines.
+                🔒 <strong>Enterprise Security:</strong> Bank-grade encryption for all guest records and payment workflows.
               </div>
             </div>
           </div>
@@ -163,26 +195,40 @@ export default function Features() {
                 <span className="dot" />
                 <span>Feature 03</span>
               </div>
-              <h2>Stop paying commission on every guest. Bring them to your own front door.</h2>
+              <h2>Own your direct bookings and save 20%.</h2>
               <p className="lead" style={{ marginBottom: 24 }}>
-                When you come on board with Staycore, we build your hotel a website on your own custom domain — designed to showcase your property, optimized for both traditional SEO and AEO (so AI search assistants can find and recommend you too). Guests can browse and book directly on your site, and every booking flows straight into your Staycore dashboard alongside your OTA and walk-in bookings.
+                A custom-domain hotel website built for high conversion, search visibility, and commission-free guest checkout.
               </p>
 
-              <h4 style={{ marginTop: 28, marginBottom: 14, color: 'var(--accent-gold-light)' }}>How it works:</h4>
-              <ol style={{ color: 'var(--text-secondary)', paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.95rem' }}>
-                <li><strong>Custom Design & Launch:</strong> We design and launch your hotel’s website on your custom domain.</li>
-                <li><strong>Search & AI Assistant Optimized:</strong> The site is built for search visibility (SEO) and AI-assistant visibility (AEO).</li>
-                <li><strong>Direct Guest Incentives:</strong> Guests book directly through your site — you can offer them promo codes and discounts to encourage direct booking over OTAs.</li>
-                <li><strong>Unified Real-Time Flow:</strong> Every direct booking appears instantly in your unified dashboard.</li>
-              </ol>
-
-              <h4 style={{ marginTop: 28, marginBottom: 14, color: 'var(--accent-sage-light)' }}>Key benefits:</h4>
               <ul className="feature-list-check">
-                <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Your own branded, custom-domain website</span></li>
-                <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Built-in SEO + AEO so guests (and AI assistants) can find you</span></li>
-                <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Direct booking engine — reduce dependency on OTA commissions</span></li>
-                <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Promo codes/coupons to reward and encourage direct bookings</span></li>
-                <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Everything syncs to the same dashboard as your other channels</span></li>
+                <li>
+                  <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
+                  <div>
+                    <strong className="text-white">Custom Domain Website:</strong>{' '}
+                    <span>Bespoke design showcasing your suites, amenities, and location aesthetic.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
+                  <div>
+                    <strong className="text-white">Google & AI Search (AEO):</strong>{' '}
+                    <span>Structured schema ensures visibility on Google, ChatGPT, and Perplexity.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
+                  <div>
+                    <strong className="text-white">Direct Booking Engine:</strong>{' '}
+                    <span>Mobile-first checkout supporting instant card and UPI payments with zero commissions.</span>
+                  </div>
+                </li>
+                <li>
+                  <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
+                  <div>
+                    <strong className="text-white">Promo Codes & Coupons:</strong>{' '}
+                    <span>Reward returning guests with private discount codes that sync to your calendar.</span>
+                  </div>
+                </li>
               </ul>
             </div>
 

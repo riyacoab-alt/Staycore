@@ -41,18 +41,17 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: 24 }}>
-                  <strong className="text-white">Best for:</strong> Hotels that want an online presence and direct bookings without managing a full system.
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 20 }}>
+                  <strong className="text-white">Best for:</strong> Hotels that want direct bookings and brand authority without running full operational software.
                 </p>
 
-                <h4 style={{ marginBottom: 16, fontSize: '0.95rem', color: 'var(--accent-gold-light)' }}>Includes:</h4>
-                <ul className="feature-list-check" style={{ marginBottom: 36 }}>
+                <h4 style={{ marginBottom: 14, fontSize: '0.92rem', color: 'var(--accent-gold-light)' }}>Includes:</h4>
+                <ul className="feature-list-check" style={{ marginBottom: 32 }}>
                   <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Custom-domain hotel website</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>SEO + AEO setup (Google & AI search)</span></li>
                   <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Direct booking engine with instant payment</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Promo code / discount support</span></li>
-                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Simple bookings-view portal</span></li>
                   <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>0% Commission on direct bookings</span></li>
+                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Google & AI search optimization (AEO)</span></li>
+                  <li><span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span><span>Simple bookings-view portal</span></li>
                 </ul>
               </div>
               <Link to="/contact" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -75,17 +74,16 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: 24 }}>
-                  <strong className="text-white">Best for:</strong> Hotels that want complete visibility and control across every booking channel.
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 20 }}>
+                  <strong className="text-white">Best for:</strong> Hotels that want complete operational visibility and control across every channel.
                 </p>
 
-                <h4 style={{ marginBottom: 16, fontSize: '0.95rem', color: 'var(--accent-sage-light)' }}>Includes everything in Website-Only, plus:</h4>
-                <ul className="feature-list-check" style={{ marginBottom: 36 }}>
-                  <li><span className="check-icon">✓</span><span>Real-time room & availability management across properties</span></li>
-                  <li><span className="check-icon">✓</span><span>AI-powered OTA booking aggregation (Goibibo, MakeMyTrip, etc.)</span></li>
-                  <li><span className="check-icon">✓</span><span>Full booking dashboard — direct, OTA, and walk-ins in one place</span></li>
-                  <li><span className="check-icon">✓</span><span>Multi-property and multi-building support</span></li>
-                  <li><span className="check-icon">✓</span><span>Staff & housekeeping live status updates</span></li>
+                <h4 style={{ marginBottom: 14, fontSize: '0.92rem', color: 'var(--accent-sage-light)' }}>Includes everything in Website-Only, plus:</h4>
+                <ul className="feature-list-check" style={{ marginBottom: 32 }}>
+                  <li><span className="check-icon">✓</span><span>Real-time multi-property room matrix</span></li>
+                  <li><span className="check-icon">✓</span><span>AI-powered OTA booking aggregation</span></li>
+                  <li><span className="check-icon">✓</span><span>Unified feed: direct, OTA & walk-ins in one view</span></li>
+                  <li><span className="check-icon">✓</span><span>Staff & housekeeping live status workflows</span></li>
                   <li><span className="check-icon">✓</span><span>Priority 24/7 dedicated operational support</span></li>
                 </ul>
               </div>
@@ -96,9 +94,9 @@ export default function Pricing() {
           </div>
 
           {/* Pricing Note */}
-          <div style={{ marginTop: 36, padding: 24, borderRadius: 14, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', textAlign: 'center' }}>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-              📌 <strong>Pricing Note:</strong> Pricing depends on hotel size (number of rooms and properties) — we provide a tailored custom quote rather than one-size-fits-all pricing, ensuring boutique homestays and multi-property resorts only pay for what they use.
+          <div style={{ marginTop: 32, padding: '18px 24px', borderRadius: 14, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+              📌 <strong>Tailored Quote Model:</strong> Scaled to your exact room and property count so you only pay for what you use.
             </p>
           </div>
         </div>
