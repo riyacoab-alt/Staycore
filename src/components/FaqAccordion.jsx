@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FAQS = [
+export const FAQS = [
   {
     q: 'Can I switch plans later?',
     a: 'Yes, absolutely. Many hotels start with the Website-Only Plan to build their online brand and take direct bookings. When you are ready to automate your OTA email confirmations and manage your room inventory in real-time, upgrading to the Full Staycore Webapp takes less than 24 hours with zero disruption.'

@@ -208,10 +208,13 @@ export default function DemoBookingWidget({ onToast }) {
 
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label className="form-label">Full Name *</label>
+                  <label htmlFor="demo-name" className="form-label">Full Name *</label>
                   <input
+                    id="demo-name"
+                    name="name"
                     type="text"
                     required
+                    autoComplete="name"
                     className="form-control"
                     placeholder="e.g. Rachel Adams"
                     value={formData.name}
@@ -220,10 +223,13 @@ export default function DemoBookingWidget({ onToast }) {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Hotel / Property Name *</label>
+                  <label htmlFor="demo-hotel" className="form-label">Hotel / Property Name *</label>
                   <input
+                    id="demo-hotel"
+                    name="hotel"
                     type="text"
                     required
+                    autoComplete="organization"
                     className="form-control"
                     placeholder="e.g. Azure Cliff Boutique Resort"
                     value={formData.hotel}
@@ -233,10 +239,13 @@ export default function DemoBookingWidget({ onToast }) {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                   <div className="form-group">
-                    <label className="form-label">Phone Number *</label>
+                    <label htmlFor="demo-phone" className="form-label">Phone Number *</label>
                     <input
+                      id="demo-phone"
+                      name="phone"
                       type="tel"
                       required
+                      autoComplete="tel"
                       className="form-control"
                       placeholder="+91 96332 77995"
                       value={formData.phone}
@@ -244,10 +253,13 @@ export default function DemoBookingWidget({ onToast }) {
                     />
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Email Address *</label>
+                    <label htmlFor="demo-email" className="form-label">Email Address *</label>
                     <input
+                      id="demo-email"
+                      name="email"
                       type="email"
                       required
+                      autoComplete="email"
                       className="form-control"
                       placeholder="rachel@azurehotel.com"
                       value={formData.email}
@@ -257,8 +269,10 @@ export default function DemoBookingWidget({ onToast }) {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Number of Rooms / Keys *</label>
+                  <label htmlFor="demo-rooms" className="form-label">Number of Rooms / Keys *</label>
                   <select
+                    id="demo-rooms"
+                    name="rooms"
                     required
                     className="form-control"
                     value={formData.rooms}
@@ -273,8 +287,10 @@ export default function DemoBookingWidget({ onToast }) {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Primary Interest</label>
+                  <label htmlFor="demo-interest" className="form-label">Primary Interest</label>
                   <select
+                    id="demo-interest"
+                    name="interest"
                     className="form-control"
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}

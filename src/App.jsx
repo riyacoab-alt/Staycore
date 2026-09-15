@@ -9,6 +9,7 @@ import Features from './pages/Features';
 import WebsiteOnly from './pages/WebsiteOnly';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import useSmoothScrollAndCards from './hooks/useSmoothScrollAndCards';
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/pricing" element={<Navigate to="/contact" replace />} />
         <Route path="/about" element={<About onToast={showToast} />} />
         <Route path="/contact" element={<Contact onToast={showToast} />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <Toast message={toastMessage} onDismiss={() => setToastMessage(null)} />

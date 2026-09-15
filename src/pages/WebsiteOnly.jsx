@@ -1,16 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, TrendingUp, CreditCard, Tag, Layout } from 'lucide-react';
+import SEO from '../components/SEO';
+import FaqAccordion, { FAQS } from '../components/FaqAccordion';
+import { SEO_PAGES, SITE_ORIGIN, createBreadcrumbSchema, createFaqSchema } from '../data/seoData';
 
 export default function WebsiteOnly() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Website-Only Plan', path: '/website-only' }
+  ]);
+  const faqSchema = createFaqSchema(FAQS);
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Staycore Website-Only Plan',
+    description: 'Bespoke custom-domain hotel website with 0% commission direct booking engine and a lightweight reservation management portal.',
+    brand: {
+      '@type': 'Brand',
+      name: 'Staycore'
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      priceValidUntil: '2027-12-31',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_ORIGIN}/website-only`,
+      description: 'Tailored custom quote based on property requirements.'
+    }
+  };
+
+  const websiteOnlyStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema,
+      productSchema,
+      faqSchema
+    ]
+  };
+
   return (
     <main>
+      <SEO
+        title={SEO_PAGES.websiteOnly.title}
+        description={SEO_PAGES.websiteOnly.description}
+        canonicalPath={SEO_PAGES.websiteOnly.path}
+        ogImage={SEO_PAGES.websiteOnly.ogImage}
+        structuredData={websiteOnlyStructuredData}
+      />
+
       {/* Page Hero */}
       <section className="hero-section">
         <div className="hero-bg-media">
           <img
             src="/assets/images/website-only-banner.png"
             alt="The Aurelia Hotel & Resort — Website-Only Plan banner showcase"
+            fetchpriority="high"
+            decoding="async"
+            width="1920"
+            height="800"
           />
           <div className="hero-video-overlay" />
         </div>
@@ -215,6 +264,24 @@ export default function WebsiteOnly() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section style={{ background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%)', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+        <div className="container" style={{ maxWidth: 840 }}>
+          <div className="section-header text-center">
+            <div className="badge-pill badge-gold">
+              <span className="dot" />
+              <span>Direct Booking Clarity</span>
+            </div>
+            <h2>Frequently Asked Questions</h2>
+            <p className="lead" style={{ margin: '0 auto' }}>
+              Learn more about setting up your custom-domain website, booking gateway, and guest payment processing.
+            </p>
+          </div>
+
+          <FaqAccordion />
         </div>
       </section>
 

@@ -1,16 +1,53 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Globe, Instagram, Linkedin, MessageSquare, ExternalLink } from 'lucide-react';
 import DemoBookingWidget from '../components/DemoBookingWidget';
+import SEO from '../components/SEO';
+import { SEO_PAGES, SITE_ORIGIN, createBreadcrumbSchema, BASE_ORGANIZATION_SCHEMA } from '../data/seoData';
 
 export default function Contact({ onToast }) {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Contact & VIP Demo', path: '/contact' }
+  ]);
+
+  const contactPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${SITE_ORIGIN}/contact/#webpage`,
+    url: `${SITE_ORIGIN}/contact`,
+    name: 'Book a Demo & Contact Our Hospitality Desk | Staycore',
+    description: 'Schedule a personalized 1-on-1 walkthrough of Staycore. See real-time room inventory, AI OTA parsing, and direct booking checkout tailored for your property.',
+    mainEntity: BASE_ORGANIZATION_SCHEMA
+  };
+
+  const contactStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema,
+      contactPageSchema,
+      BASE_ORGANIZATION_SCHEMA
+    ]
+  };
+
   return (
     <main>
+      <SEO
+        title={SEO_PAGES.contact.title}
+        description={SEO_PAGES.contact.description}
+        canonicalPath={SEO_PAGES.contact.path}
+        ogImage={SEO_PAGES.contact.ogImage}
+        structuredData={contactStructuredData}
+      />
+
       {/* Page Hero */}
       <section className="hero-section">
         <div className="hero-bg-media">
           <img
             src="/assets/images/contact-banner.png"
-            alt="Staycore Contact Desk — Luxury Hotel Reception"
+            alt="Staycore Contact Desk — Luxury Hotel Reception and Front Desk Architecture"
+            fetchpriority="high"
+            decoding="async"
+            width="1920"
+            height="800"
           />
           <div className="hero-video-overlay" />
         </div>
@@ -102,10 +139,8 @@ export default function Contact({ onToast }) {
                   Direct inquiries, partnership proposals, and custom quotes for properties:
                 </p>
                 <div style={{ fontSize: '1.1rem', color: '#fff', fontWeight: 600, wordBreak: 'break-all', marginBottom: 4 }}>
-                  <a href="mailto:coabgroup@gmail.com
-" style={{ color: 'var(--accent-gold-light)' }}>
+                  <a href="mailto:coabgroup@gmail.com" style={{ color: 'var(--accent-gold-light)' }}>
                     coabgroup@gmail.com
-
                   </a>
                 </div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
@@ -115,8 +150,7 @@ export default function Contact({ onToast }) {
 
               <div style={{ marginTop: 22 }}>
                 <a
-                  href="mailto:coabgroup@gmail.com
-"
+                  href="mailto:coabgroup@gmail.com"
                   className="btn btn-secondary btn-sm"
                   style={{ width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
                 >

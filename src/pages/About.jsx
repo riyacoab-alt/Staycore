@@ -1,13 +1,53 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { SEO_PAGES, SITE_ORIGIN, createBreadcrumbSchema, BASE_ORGANIZATION_SCHEMA } from '../data/seoData';
 
 export default function About() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'About Staycore', path: '/about' }
+  ]);
+
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${SITE_ORIGIN}/about/#webpage`,
+    url: `${SITE_ORIGIN}/about`,
+    name: 'About Staycore — Hospitality Technology Built by COAB',
+    description: 'Learn the story behind Staycore and COAB. Why product-first engineering solves high-friction hotel operations across rooms, OTAs, and direct bookings.',
+    mainEntity: BASE_ORGANIZATION_SCHEMA
+  };
+
+  const aboutStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema,
+      aboutPageSchema,
+      BASE_ORGANIZATION_SCHEMA
+    ]
+  };
+
   return (
     <main>
+      <SEO
+        title={SEO_PAGES.about.title}
+        description={SEO_PAGES.about.description}
+        canonicalPath={SEO_PAGES.about.path}
+        ogImage={SEO_PAGES.about.ogImage}
+        structuredData={aboutStructuredData}
+      />
+
       {/* Page Hero */}
       <section className="hero-section">
         <div className="hero-bg-media">
-          <img src="/assets/images/hotel-villa.jpg" alt="Atmospheric hotel villa architecture" />
+          <img
+            src="/assets/images/hotel-villa.jpg"
+            alt="Atmospheric hotel villa architecture and luxury hospitality technology environment"
+            fetchpriority="high"
+            decoding="async"
+            width="1920"
+            height="800"
+          />
           <div className="hero-video-overlay" />
         </div>
         <div className="container hero-content" style={{ position: 'relative', zIndex: 1 }}>

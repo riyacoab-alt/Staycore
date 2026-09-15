@@ -1,15 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import FaqAccordion, { FAQS } from '../components/FaqAccordion';
+import { SEO_PAGES, createBreadcrumbSchema, createFaqSchema, SOFTWARE_APPLICATION_SCHEMA } from '../data/seoData';
 
 export default function Features() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Platform Capabilities', path: '/features' }
+  ]);
+  const faqSchema = createFaqSchema(FAQS);
+
+  const featuresStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema,
+      SOFTWARE_APPLICATION_SCHEMA,
+      faqSchema
+    ]
+  };
+
   return (
     <main>
+      <SEO
+        title={SEO_PAGES.features.title}
+        description={SEO_PAGES.features.description}
+        canonicalPath={SEO_PAGES.features.path}
+        ogImage={SEO_PAGES.features.ogImage}
+        structuredData={featuresStructuredData}
+      />
+
       {/* Page Hero */}
       <section className="hero-section">
         <div className="hero-bg-media">
           <img
             src="/assets/images/features-banner.png"
             alt="Staycore Unified Platform Capabilities — Luxury Suite Showcase"
+            fetchpriority="high"
+            decoding="async"
+            width="1920"
+            height="800"
           />
           <div className="hero-video-overlay" />
         </div>
@@ -88,7 +117,11 @@ export default function Features() {
               </div>
               <img
                 src="/assets/images/hero-suite.jpg"
-                alt="Hotel room mockup"
+                alt="Deluxe hotel room mockup in Staycore multi-floor live availability matrix"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="260"
                 style={{ borderRadius: 12, height: 260, width: '100%', objectFit: 'cover', marginBottom: 20 }}
               />
               <div className="rooms-mock-grid">
@@ -250,7 +283,11 @@ export default function Features() {
             <div className="card-glass">
               <img
                 src="/assets/images/hotel-lounge.jpg"
-                alt="Luxury hotel cocktail lounge"
+                alt="Luxury hotel lounge driving commission-free direct reservations"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="280"
                 style={{ borderRadius: 14, width: '100%', height: 280, objectFit: 'cover', marginBottom: 20 }}
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
@@ -264,6 +301,24 @@ export default function Features() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section style={{ background: 'linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%)', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+        <div className="container" style={{ maxWidth: 840 }}>
+          <div className="section-header text-center">
+            <div className="badge-pill">
+              <span className="dot" />
+              <span>Common Inquiries</span>
+            </div>
+            <h2>Frequently Asked Questions</h2>
+            <p className="lead" style={{ margin: '0 auto' }}>
+              Everything hoteliers want to know about onboarding, OTA synchronization, and commission-free revenue.
+            </p>
+          </div>
+
+          <FaqAccordion />
         </div>
       </section>
 

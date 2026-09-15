@@ -4,6 +4,8 @@ import { Volume2, VolumeX } from 'lucide-react';
 import HeroDashboardPreview from '../components/HeroDashboardPreview';
 import OtaComparison from '../components/OtaComparison';
 import DirectBookingPreview from '../components/DirectBookingPreview';
+import SEO from '../components/SEO';
+import { SEO_PAGES, BASE_ORGANIZATION_SCHEMA, SOFTWARE_APPLICATION_SCHEMA, WEBSITE_SCHEMA } from '../data/seoData';
 
 export default function Home({ onToast }) {
   const [isMuted, setIsMuted] = useState(true);
@@ -17,8 +19,25 @@ export default function Home({ onToast }) {
     }
   };
 
+  const homeStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      BASE_ORGANIZATION_SCHEMA,
+      SOFTWARE_APPLICATION_SCHEMA,
+      WEBSITE_SCHEMA
+    ]
+  };
+
   return (
     <main>
+      <SEO
+        title={SEO_PAGES.home.title}
+        description={SEO_PAGES.home.description}
+        canonicalPath={SEO_PAGES.home.path}
+        ogImage={SEO_PAGES.home.ogImage}
+        structuredData={homeStructuredData}
+      />
+
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-bg-media">
@@ -28,6 +47,7 @@ export default function Home({ onToast }) {
             loop
             muted={isMuted}
             playsInline
+            preload="metadata"
             poster="/assets/images/hero-suite.jpg"
             className="hero-banner-video"
           >
@@ -136,7 +156,11 @@ export default function Home({ onToast }) {
               </div>
               <img
                 src="/assets/images/hotel-villa.jpg"
-                alt="Luxury hotel villa suite"
+                alt="Luxury hotel mountain penthouse suite villa showcase in Staycore room availability matrix"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="260"
                 style={{ borderRadius: 12, width: '100%', height: 260, objectFit: 'cover', border: '1px solid rgba(255,255,255,0.08)' }}
               />
               <div style={{ marginTop: 18, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem' }}>

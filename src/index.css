@@ -2368,3 +2368,99 @@ html.lenis, html.lenis body {
     gap: 12px;
   }
 }
+
+/* ==========================================================================
+   TECHNICAL SEO, CORE WEB VITALS & ACCESSIBILITY ENHANCEMENTS
+   ========================================================================== */
+
+/* 1. CLS Prevention (Cumulative Layout Shift) */
+.hero-bg-media {
+  aspect-ratio: 16 / 9;
+  min-height: 480px;
+}
+
+@media (max-width: 768px) {
+  .hero-bg-media {
+    aspect-ratio: 4 / 5;
+    min-height: 420px;
+  }
+}
+
+/* 2. Touch Target Size Compliance (INP & Mobile Usability >= 44x44px) */
+.btn,
+.mobile-nav-link,
+.faq-question,
+.menu-toggle,
+.hero-video-sound-btn {
+  min-height: 44px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  min-height: 44px;
+}
+
+/* 3. Small Mobile Devices (<= 480px and <= 360px) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8.5vw, 2.6rem);
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cta-banner {
+    padding: 36px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .badge-pill {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* 4. Reduced Motion Preference (INP & Accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

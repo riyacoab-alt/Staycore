@@ -19,10 +19,8 @@ export default function Footer() {
               <a href="tel:+919633277995" style={{ color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                 <Phone size={14} style={{ color: 'var(--accent-sage-light)' }} /> +91 96332 77995
               </a>
-              <a href="mailto:coabgroup@gmail.com
-" style={{ color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              <a href="mailto:coabgroup@gmail.com" style={{ color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                 <Mail size={14} style={{ color: 'var(--accent-gold)' }} /> coabgroup@gmail.com
-
               </a>
               <div style={{ color: 'var(--text-dim)', fontSize: '0.78rem', marginTop: 4, lineHeight: 1.4 }}>
                 37/2256, Kollamkudi House, Kollamkudimugal, Thrikkakara, Ernakulam, Kerala 682021.

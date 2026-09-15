@@ -1,0 +1,12 @@
+# Staycore Robots Configuration
+# https://staycore.club
+
+User-agent: *
+Allow: /
+
+# Disallow private and build assets
+Disallow: /dist/
+Disallow: /archive/
+
+# XML Sitemap Location
+Sitemap: https://staycore.club/sitemap.xml
