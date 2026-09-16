@@ -1,10 +1,21 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Globe, Instagram, Linkedin, MessageSquare, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Globe, Instagram, Linkedin, MessageSquare, ExternalLink, Calendar, CheckCircle } from 'lucide-react';
 import DemoBookingWidget from '../components/DemoBookingWidget';
+import Breadcrumbs from '../components/Breadcrumbs';
 import SEO from '../components/SEO';
-import { SEO_PAGES, SITE_ORIGIN, createBreadcrumbSchema, BASE_ORGANIZATION_SCHEMA } from '../data/seoData';
+import {
+  SEO_PAGES,
+  SITE_ORIGIN,
+  createBreadcrumbSchema,
+  BASE_ORGANIZATION_SCHEMA
+} from '../data/seoData';
 
 export default function Contact({ onToast }) {
+  const breadcrumbItems = [
+    { label: 'Contact & VIP Demo', path: '/contact' }
+  ];
+
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: 'Contact & VIP Demo', path: '/contact' }
   ]);
@@ -14,8 +25,8 @@ export default function Contact({ onToast }) {
     '@type': 'ContactPage',
     '@id': `${SITE_ORIGIN}/contact/#webpage`,
     url: `${SITE_ORIGIN}/contact`,
-    name: 'Book a Demo & Contact Our Hospitality Desk | Staycore',
-    description: 'Schedule a personalized 1-on-1 walkthrough of Staycore. See real-time room inventory, AI OTA parsing, and direct booking checkout tailored for your property.',
+    name: 'Contact Staycore | Request a Hotel Software Demo',
+    description: 'Contact Staycore or book a live 1-on-1 hotel software demo. See real-time room availability, AI OTA parsing, and direct booking tools for your property.',
     mainEntity: BASE_ORGANIZATION_SCHEMA
   };
 
@@ -42,25 +53,27 @@ export default function Contact({ onToast }) {
       <section className="hero-section">
         <div className="hero-bg-media">
           <img
-            src="/assets/images/contact-banner.png"
-            alt="Staycore Contact Desk — Luxury Hotel Reception and Front Desk Architecture"
+            src="/assets/images/hotel-contact-reception-desk.webp"
+            alt="Staycore hotel management software contact desk — luxury hotel reception and concierge architecture"
             fetchpriority="high"
             decoding="async"
-            width="1920"
-            height="800"
+            width="1376"
+            height="768"
           />
           <div className="hero-video-overlay" />
         </div>
         <div className="container hero-content text-center" style={{ maxWidth: 880, position: 'relative', zIndex: 1 }}>
-          <div className="badge-pill">
+          <Breadcrumbs items={breadcrumbItems} />
+
+          <div className="badge-pill" style={{ marginTop: 12 }}>
             <span className="dot" />
-            <span>Direct Hospitality & Engineering Desk</span>
+            <span>Direct Hospitality &amp; Engineering Desk</span>
           </div>
           <h1 className="hero-title">
-            See what one dashboard <br /><span>can do for your hotel.</span>
+            Contact Staycore &amp; <br /><span>Request a Live Hotel Software Demo.</span>
           </h1>
           <p className="hero-sub">
-            Book an interactive 1-on-1 walkthrough or reach out directly to our team. We’ll show you how Staycore unifies your rooms, eliminates OTA inbox clutter, and captures 0% commission direct guests.
+            Schedule an interactive 1-on-1 walkthrough or reach out directly to our engineering desk. We’ll show you how Staycore unifies room inventory, auto-syncs OTA emails, and captures 0% commission direct guests.
           </p>
           <div className="hero-cta-group" style={{ justifyContent: 'center' }}>
             <a href="#demo-widget" className="btn btn-primary btn-lg">
@@ -76,6 +89,16 @@ export default function Contact({ onToast }) {
       {/* Interactive Demo Widget Section */}
       <section id="demo-widget" style={{ paddingTop: 30 }}>
         <div className="container">
+          <div className="section-header text-center" style={{ marginBottom: 28 }}>
+            <div className="badge-pill">
+              <span className="dot" />
+              <span>Personalized Walkthrough</span>
+            </div>
+            <h2>Schedule Your Interactive VIP Walkthrough</h2>
+            <p className="lead" style={{ margin: '0 auto' }}>
+              Select a date and time that fits your schedule. Our team will tailor the walkthrough to your property size and operational goals.
+            </p>
+          </div>
           <DemoBookingWidget onToast={onToast} />
         </div>
       </section>
@@ -88,9 +111,9 @@ export default function Contact({ onToast }) {
               <span className="dot" />
               <span>Direct Channels</span>
             </div>
-            <h2>Official Coordinates & Support</h2>
+            <h2>Official Corporate Coordinates &amp; Direct Support</h2>
             <p className="lead" style={{ margin: '0 auto' }}>
-              Connect directly with our hospitality technology team via phone, WhatsApp, email, or social channels.
+              Connect directly with our hospitality technology team via phone, WhatsApp, official email, or corporate headquarters.
             </p>
           </div>
 
@@ -101,7 +124,7 @@ export default function Contact({ onToast }) {
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--accent-sage-soft)', border: '1px solid var(--accent-sage-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage-light)', marginBottom: 16 }}>
                   <Phone size={20} />
                 </div>
-                <h4 style={{ color: '#fff', marginBottom: 6 }}>Direct Hotline & WhatsApp</h4>
+                <h3 style={{ color: '#fff', marginBottom: 6, fontSize: '1.2rem' }}>Direct Hotline &amp; WhatsApp Desk</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginBottom: 16 }}>
                   Immediate assistance with hotel installations, onboarding, and system walkthroughs:
                 </p>
@@ -134,7 +157,7 @@ export default function Contact({ onToast }) {
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--accent-gold-soft)', border: '1px solid var(--accent-gold-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', marginBottom: 16 }}>
                   <Mail size={20} />
                 </div>
-                <h4 style={{ color: '#fff', marginBottom: 6 }}>Email Inquiries</h4>
+                <h3 style={{ color: '#fff', marginBottom: 6, fontSize: '1.2rem' }}>Email Inquiries &amp; Quotations</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginBottom: 16 }}>
                   Direct inquiries, partnership proposals, and custom quotes for properties:
                 </p>
@@ -165,12 +188,12 @@ export default function Contact({ onToast }) {
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-white)', marginBottom: 16 }}>
                   <MapPin size={20} />
                 </div>
-                <h4 style={{ color: '#fff', marginBottom: 6 }}>Registered Office</h4>
+                <h3 style={{ color: '#fff', marginBottom: 6, fontSize: '1.2rem' }}>Registered Corporate Office</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginBottom: 14 }}>
-                  COAB Engineering & Hospitality Technology Headquarters:
+                  COAB Solutions Private Limited Headquarters:
                 </p>
                 <div style={{ fontSize: '0.92rem', color: '#fff', lineHeight: 1.6, fontWeight: 500 }}>
-                  37/2256, Kollamkudi House, Kollamkudimugal, Thrikkakara, Ernakulam, Kerala 682021.
+                  37/2256, Kollamkudi House, Kollamkudimugal, Thrikkakara, Ernakulam, Kerala 682021, India.
                 </div>
               </div>
 
@@ -193,7 +216,7 @@ export default function Contact({ onToast }) {
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: 'var(--accent-sage-soft)', border: '1px solid var(--accent-sage-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage-light)', marginBottom: 16 }}>
                   <Globe size={20} />
                 </div>
-                <h4 style={{ color: '#fff', marginBottom: 6 }}>COAB Public Channels</h4>
+                <h3 style={{ color: '#fff', marginBottom: 6, fontSize: '1.2rem' }}>Verified Public Channels</h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginBottom: 14 }}>
                   Explore our ecosystem, product announcements, and corporate updates:
                 </p>
@@ -226,15 +249,13 @@ export default function Contact({ onToast }) {
               </div>
 
               <div style={{ marginTop: 22 }}>
-                <a
-                  href="https://coab.club/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/features"
                   className="btn btn-secondary btn-sm"
                   style={{ width: '100%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}
                 >
-                  Visit COAB Website <ExternalLink size={14} />
-                </a>
+                  Explore Platform Capabilities →
+                </Link>
               </div>
             </div>
           </div>

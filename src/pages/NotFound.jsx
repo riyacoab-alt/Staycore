@@ -62,9 +62,10 @@ export default function NotFound() {
                 Core Capabilities
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8, fontSize: '0.9rem' }}>
-                <li><Link to="/features" style={{ color: 'var(--text-primary)' }}>Live Room Matrix</Link></li>
-                <li><Link to="/features" style={{ color: 'var(--text-primary)' }}>AI OTA Confirmation Feed</Link></li>
-                <li><Link to="/website-only" style={{ color: 'var(--text-primary)' }}>0% Commission Website Plan</Link></li>
+                <li><Link to="/features#feature-rooms" style={{ color: 'var(--text-primary)' }}>Live Room Matrix</Link></li>
+                <li><Link to="/features#feature-ota" style={{ color: 'var(--text-primary)' }}>AI OTA Confirmation Feed</Link></li>
+                <li><Link to="/website-only" style={{ color: 'var(--text-primary)' }}>Hotel Website Builder</Link></li>
+                <li><Link to="/direct-hotel-booking" style={{ color: 'var(--text-primary)' }}>Direct Hotel Booking</Link></li>
               </ul>
             </div>
 

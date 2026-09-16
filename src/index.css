@@ -1581,8 +1581,8 @@ p.lead {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.8fr 1.1fr 1.3fr 0.9fr 1fr;
+  gap: 40px;
   margin-bottom: 60px;
 }
 
@@ -2463,4 +2463,55 @@ html.lenis, html.lenis body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* 5. Accessible Breadcrumb Navigation */
+.breadcrumb-nav {
+  display: inline-flex;
+  margin-bottom: 18px;
+}
+
+.breadcrumb-list {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 6px 14px;
+  margin: 0 auto;
+  border-radius: 9999px;
+  background: rgba(15, 20, 26, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent-gold);
+}
+
+.breadcrumb-separator {
+  margin: 0 4px;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 500;
 }

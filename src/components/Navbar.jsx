@@ -54,10 +54,14 @@ export default function Navbar() {
                   Website-Only Plan
                 </NavLink>
               </li>
-
               <li>
                 <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                   About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/resources" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                  Resources
                 </NavLink>
               </li>
               <li>
@@ -109,10 +113,14 @@ export default function Navbar() {
                 Website-Only Plan
               </NavLink>
             </li>
-
             <li>
               <NavLink to="/about" onClick={closeMobile} className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>
                 About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/resources" onClick={closeMobile} className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}>
+                Resources
               </NavLink>
             </li>
             <li>

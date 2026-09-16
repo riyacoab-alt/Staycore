@@ -7,28 +7,28 @@ export const INTRO_CARDS = [
     id: 'card-1',
     title: 'The Obsidian Grand',
     sub: 'Executive Penthouse Suite • 42 Keys • Live Room Matrix',
-    image: '/assets/images/hero-suite.jpg',
+    image: '/assets/images/hotel-management-dashboard.webp',
     badge: 'Flagship Property'
   },
   {
     id: 'card-2',
     title: 'Alpine Mountain Villa',
     sub: 'Private Luxury Retreat • Direct Channel • 0% Commission',
-    image: '/assets/images/hotel-villa.jpg',
+    image: '/assets/images/hotel-room-availability-matrix.webp',
     badge: 'Direct Booking'
   },
   {
     id: 'card-3',
     title: 'The Amber Lounge & Bar',
     sub: 'Boutique Cocktail Lounge • Real-Time AI Ingestion Feed',
-    image: '/assets/images/hotel-lounge.jpg',
+    image: '/assets/images/hotel-direct-booking-lounge.webp',
     badge: 'OTA Aggregated'
   },
   {
     id: 'card-4',
     title: 'Azure Cliff Residence',
     sub: 'Skyline Terrace Suite • 1-Tap Housekeeping Sync',
-    image: '/assets/images/hero-suite.jpg',
+    image: '/assets/images/hotel-management-dashboard.webp',
     badge: 'Multi-Property'
   }
 ];

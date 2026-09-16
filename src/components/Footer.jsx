@@ -60,11 +60,22 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Platform</h5>
             <ul className="footer-links">
-              <li><Link to="/features">Dashboard Overview</Link></li>
-              <li><Link to="/features">Room Availability Matrix</Link></li>
-              <li><Link to="/features">AI OTA Aggregator</Link></li>
-              <li><Link to="/features">Direct Booking Engine</Link></li>
-              <li><Link to="/website-only">Website-Only Plan</Link></li>
+              <li><Link to="/features">Hotel Management System</Link></li>
+              <li><Link to="/ota-booking-management">OTA Booking Management</Link></li>
+              <li><Link to="/direct-hotel-booking">Direct Hotel Booking</Link></li>
+              <li><Link to="/website-only">Hotel Website Builder</Link></li>
+              <li><Link to="/contact">Request a Custom Quote</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h5>Guides &amp; Hub</h5>
+            <ul className="footer-links">
+              <li><Link to="/resources">Educational Knowledge Hub</Link></li>
+              <li><Link to="/resources/what-is-hotel-management-software">What is Hotel Management Software?</Link></li>
+              <li><Link to="/resources/what-is-ota-booking-management">What is OTA Management?</Link></li>
+              <li><Link to="/resources/ota-vs-direct-hotel-bookings">OTA vs Direct Hotel Bookings</Link></li>
+              <li><Link to="/resources/what-should-a-hotel-website-include">Hotel Website Must-Haves</Link></li>
             </ul>
           </div>
 
@@ -72,9 +83,9 @@ export default function Footer() {
             <h5>Company</h5>
             <ul className="footer-links">
               <li><Link to="/about">About Staycore</Link></li>
-              <li><Link to="/about">Why COAB Built This</Link></li>
-              <li><Link to="/contact">Book a Demo</Link></li>
-              <li><Link to="/contact">General Inquiries</Link></li>
+              <li><Link to="/about#why-coab">Why COAB Built This</Link></li>
+              <li><Link to="/contact">Book a Free Demo</Link></li>
+              <li><Link to="/contact#inquiries">Official Coordinates</Link></li>
             </ul>
           </div>
 

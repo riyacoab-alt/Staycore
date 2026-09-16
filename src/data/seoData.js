@@ -36,30 +36,40 @@ export const BASE_ORGANIZATION_SCHEMA = {
     'https://coab.club/',
     'https://www.instagram.com/coab.club/',
     'https://www.linkedin.com/company/coabclub/posts/?feedView=all'
-  ]
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+919633277995',
+    contactType: 'customer service',
+    areaServed: 'IN',
+    availableLanguage: ['English', 'Malayalam', 'Hindi']
+  }
 };
 
 export const SOFTWARE_APPLICATION_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   '@id': `${SITE_ORIGIN}/#software`,
-  name: 'Staycore Hotel Management Platform',
+  name: 'Staycore Hotel Management Software',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'All modern web and mobile browsers',
   url: SITE_ORIGIN,
-  description: 'Unified hotel operating system with real-time room availability matrix, automated AI OTA email parser, and 0% commission direct booking engine.',
+  description: 'Unified hotel operating system with real-time room availability matrix, automated AI OTA confirmation email parsing, and 0% commission direct hotel booking engine.',
   author: {
+    '@id': `${SITE_ORIGIN}/#organization`
+  },
+  publisher: {
     '@id': `${SITE_ORIGIN}/#organization`
   },
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: 'Custom tailored quote based on property keys and selected modules.'
+    description: 'Custom tailored quote based on property keys and selected operational modules.'
   },
   featureList: [
     'Live Multi-Property Room Availability Matrix',
-    'AI-Automated OTA Confirmation Email Parsing',
+    'AI-Automated OTA Confirmation Email Parsing (MakeMyTrip, Goibibo, Booking.com, Agoda, Expedia)',
     '0% Commission Direct Hotel Booking Engine',
     'Custom-Domain Hotel Website Builder',
     'Instant UPI and International Card Payment Processing',
@@ -124,36 +134,224 @@ export function createFaqSchema(faqs = []) {
   };
 }
 
+// -------------------------------------------------------------
+// PAGE-SPECIFIC UNIQUE FAQ SETS (Eliminates Duplicate Content)
+// -------------------------------------------------------------
+
+export const HOME_FAQS = [
+  {
+    q: 'What is Staycore hotel management software?',
+    a: 'Staycore is a unified hotel management platform that combines real-time room availability, automated AI parsing for OTA confirmation emails, and a 0% commission direct booking hotel website into a single dashboard.'
+  },
+  {
+    q: 'How does Staycore eliminate double bookings?',
+    a: 'Staycore synchronizes room status across walk-in registrations, phone bookings, and OTA channels in real time. When a room is booked through any channel, the availability matrix locks it instantly across all screens.'
+  },
+  {
+    q: 'Can hotels get their own direct booking website with Staycore?',
+    a: 'Yes. Staycore provides a bespoke hotel website hosted on your custom domain with an integrated, mobile-first direct booking engine that processes card and UPI payments with zero commission.'
+  },
+  {
+    q: 'Can we switch from the Website-Only plan to the Full Webapp later?',
+    a: 'Yes, absolutely. Hoteliers frequently start with the Website-Only plan to capture direct reservations and upgrade to the complete Staycore operating system in under 24 hours with zero operational downtime.'
+  }
+];
+
+export const FEATURES_FAQS = [
+  {
+    q: 'Which OTA platforms does Staycore’s AI email parser support?',
+    a: 'Staycore’s AI ingestion engine automatically captures, reads, and extracts booking details from MakeMyTrip, Goibibo, Booking.com, Agoda, and Expedia confirmation emails within 0.8 seconds.'
+  },
+  {
+    q: 'Can Staycore manage multiple hotels or separate property wings?',
+    a: 'Yes. The multi-property floor matrix allows front-desk and general managers to switch between different buildings, wings, floors, and independent resort villas from a single view.'
+  },
+  {
+    q: 'How do housekeeping teams update room readiness?',
+    a: 'Housekeeping staff use an optimized mobile status interface with one-tap toggles between Ready, Occupied, Cleaning, and Maintenance, keeping the front desk informed without intercom calls.'
+  },
+  {
+    q: 'Does front-desk staff need specialized hardware to operate Staycore?',
+    a: 'No specialized hardware is required. Staycore runs securely on modern web browsers across desktop PCs, laptops, tablets, and smartphones.'
+  },
+  {
+    q: 'How does Staycore handle OTA booking cancellations and date modifications?',
+    a: 'When an OTA issues a cancellation or date change email, the AI parser updates the calendar entry and immediately releases or shifts room inventory on your matrix.'
+  }
+];
+
+export const WEBSITE_ONLY_FAQS = [
+  {
+    q: 'Can we connect our existing custom hotel domain?',
+    a: 'Yes. We configure your custom domain (e.g., yourhotel.com) with high-speed DNS, SSL encryption, and Google search console indexing, maintaining complete brand authority.'
+  },
+  {
+    q: 'Does Staycore charge any commission on direct bookings?',
+    a: 'Zero platform commission. Your hotel keeps 100% of room revenue. Standard merchant gateway processing fees (such as Stripe or Razorpay) apply directly to your linked bank account.'
+  },
+  {
+    q: 'What payment methods can guests use on our hotel website?',
+    a: 'The direct booking checkout supports instant UPI, Google Pay, Apple Pay, Visa, Mastercard, RuPay, and international credit cards.'
+  },
+  {
+    q: 'How do we receive notifications when a direct guest books?',
+    a: 'Instant booking notifications are delivered via SMS, WhatsApp, and email, and appear immediately in your lightweight reservations portal.'
+  },
+  {
+    q: 'How does Staycore optimize our hotel website for Google and AI search?',
+    a: 'Each website includes structured schema markup (schema.org/Hotel), fast Core Web Vitals optimization, localized meta tags, and open AI search integration for ChatGPT and Google Hotel Search.'
+  }
+];
+
+export const PRICING_FAQS = [
+  {
+    q: 'How is Staycore hotel management software pricing determined?',
+    a: 'Staycore uses a transparent, room-count-based investment model. Boutique homestays and heritage villas pay a modest operational rate, while larger multi-property resorts receive a tailored volume quote.'
+  },
+  {
+    q: 'Are there any hidden fees or direct booking commission cuts?',
+    a: 'None. We believe hotels should own their revenue. Direct bookings carry 0% platform commission, and there are no surprise bandwidth or support surcharges.'
+  },
+  {
+    q: 'What is included in the property onboarding package?',
+    a: 'Onboarding includes bespoke hotel website design, custom domain setup, room cataloging, OTA email parser configuration, staff training walkthroughs, and dedicated launch support.'
+  },
+  {
+    q: 'Can we start with the Website-Only plan and upgrade later?',
+    a: 'Yes. You can start with the Website-Only plan to capture direct guests and upgrade seamlessly to the full PMS webapp as your occupancy and operational needs expand.'
+  },
+  {
+    q: 'Do you offer flexible billing cycles?',
+    a: 'Yes, we provide both monthly operational agreements and discounted annual plans depending on your property’s cash flow preference.'
+  }
+];
+
+export const OTA_FAQS = [
+  {
+    q: 'Which Online Travel Agencies (OTAs) does Staycore support?',
+    a: 'Staycore’s AI parsing engine natively captures, reads, and extracts booking details from confirmation emails sent by MakeMyTrip, Goibibo, Booking.com, Agoda, and Expedia in under 0.8 seconds.'
+  },
+  {
+    q: 'How does Staycore prevent overbookings across channels?',
+    a: 'When an OTA reservation email arrives, Staycore immediately triggers an auto-inventory hold on your availability matrix, locking that room key so walk-ins or other booking channels cannot duplicate the reservation.'
+  },
+  {
+    q: 'What happens when a guest cancels or alters their dates on an OTA?',
+    a: 'When an OTA issues a cancellation or date alteration notice, the AI parser instantly updates the calendar entry and frees or shifts the inventory on your room matrix.'
+  },
+  {
+    q: 'Do we need to keep multiple extranet tabs open during the day?',
+    a: 'No. Staycore consolidates incoming reservations from all supported OTA channels into a single chronological feed, eliminating the need to monitor separate inboxes and extranet portals.'
+  },
+  {
+    q: 'Can Staycore track returning guests across different booking channels?',
+    a: 'Yes. Staycore’s guest profiles link reservations by guest phone number and email, allowing you to identify loyal returning guests even if they previously booked through a different channel.'
+  }
+];
+
+export const DIRECT_BOOKING_FAQS = [
+  {
+    q: 'Does Staycore take any commission on direct hotel bookings?',
+    a: 'Zero platform commission. Your hotel retains 100% of guest room revenue. Standard merchant gateway processing fees from your linked payment provider (e.g. Stripe, Razorpay) apply directly to your account.'
+  },
+  {
+    q: 'What payment options can guests use on our direct booking engine?',
+    a: 'The mobile-first direct booking engine supports instant UPI, Google Pay, Apple Pay, Visa, Mastercard, RuPay, and international credit/debit cards.'
+  },
+  {
+    q: 'Can guests apply promo codes or private corporate discounts?',
+    a: 'Yes. You can generate custom discount codes, seasonal perks, and returning guest promo codes that apply directly during checkout and record automatically on your dashboard.'
+  },
+  {
+    q: 'How does a direct booking website help us appear on Google and AI search?',
+    a: 'Staycore embeds Schema.org/Hotel and Schema.org/Offer structured data into your custom-domain website, allowing Google Hotel Search, ChatGPT, and Perplexity to read live rates and recommend your official direct channel.'
+  },
+  {
+    q: 'Can we use our existing custom hotel domain name?',
+    a: 'Yes. We configure your custom domain (e.g., yourhotel.com) with high-speed DNS, SSL encryption, and search console indexing while preserving your property brand identity.'
+  }
+];
+
+/**
+ * Builds a valid Schema.org Article structured data object for educational guides
+ * @param {Object} guide
+ */
+export function createArticleSchema(guide) {
+  if (!guide) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.metaDescription,
+    url: `${SITE_ORIGIN}/resources/${guide.slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_ORIGIN}/resources/${guide.slug}`
+    },
+    author: {
+      '@id': `${SITE_ORIGIN}/#organization`
+    },
+    publisher: {
+      '@id': `${SITE_ORIGIN}/#organization`
+    },
+    datePublished: '2026-09-10',
+    dateModified: '2026-09-16'
+  };
+}
+
+// -------------------------------------------------------------
+// METADATA CONFIGURATION PER PAGE
+// -------------------------------------------------------------
+
 export const SEO_PAGES = {
   home: {
-    title: 'Staycore — One Platform for Every Hotel Booking',
-    description: 'One unified hotel management platform for your rooms, bookings, and OTAs. Eliminate double bookings, auto-sync OTA emails with AI, and capture 0% commission direct bookings.',
+    title: 'Hotel Management Software for Modern Hotels | Staycore',
+    description: 'Manage hotel operations, room availability, OTA bookings, and your own direct booking hotel website with Staycore’s unified hotel management platform.',
     path: '/',
-    ogImage: '/assets/images/hero-suite.jpg'
+    ogImage: '/assets/images/hotel-management-dashboard.webp'
   },
   features: {
-    title: 'Hotel Management Features & Capabilities | Staycore',
-    description: 'Explore Staycore’s live room availability matrix, automated AI OTA email aggregator, multi-property calendar, and 0% commission direct booking engine.',
+    title: 'Hotel Management System & Operations Features | Staycore',
+    description: 'Explore Staycore’s hotel management system: live room availability matrix, automated AI OTA email parsing, multi-property views, and direct booking engine.',
     path: '/features',
-    ogImage: '/assets/images/features-banner.png'
+    ogImage: '/assets/images/hotel-management-features-banner.webp'
+  },
+  otaBooking: {
+    title: 'OTA Booking Management Software for Hotels | Staycore',
+    description: 'Centralize hotel bookings from MakeMyTrip, Goibibo, Booking.com, and Expedia with Staycore’s automated AI OTA email parser and real-time inventory guard.',
+    path: '/ota-booking-management',
+    ogImage: '/assets/images/hotel-management-features-banner.webp'
   },
   websiteOnly: {
-    title: 'Hotel Website Builder & Direct Booking Engine | Staycore',
-    description: 'Get a bespoke, search-ready hotel website on your custom domain with 0% commission direct bookings and a lightweight reservation management portal.',
+    title: 'Hotel Website Builder | Direct Booking Engine | Staycore',
+    description: 'Get a custom-domain hotel website with Staycore’s 0% commission direct booking engine, AI search visibility, and lightweight reservation portal.',
     path: '/website-only',
-    ogImage: '/assets/images/website-only-banner.png'
+    ogImage: '/assets/images/hotel-website-builder-banner.webp'
   },
+  directBooking: {
+    title: 'Direct Hotel Booking Software & 0% Commission Engine | Staycore',
+    description: 'Boost direct hotel reservations with Staycore’s commission-free direct booking engine. Mobile-first checkout, instant UPI & card payments, and promo codes.',
+    path: '/direct-hotel-booking',
+    ogImage: '/assets/images/hotel-direct-booking-lounge.webp'
+  },
+
   about: {
-    title: 'About Staycore — Hospitality Technology Built by COAB',
-    description: 'Learn the story behind Staycore and COAB. Why product-first engineering solves high-friction hotel operations across rooms, OTAs, and direct bookings.',
+    title: 'About Staycore | Hospitality Technology Built by COAB',
+    description: 'Learn how Staycore was built by COAB to solve operational friction in hospitality. Unified hotel management software, OTA aggregation, and direct bookings.',
     path: '/about',
-    ogImage: '/assets/images/hotel-villa.jpg'
+    ogImage: '/assets/images/hotel-room-availability-matrix.webp'
   },
   contact: {
-    title: 'Book a Demo & Contact Our Hospitality Desk | Staycore',
-    description: 'Schedule a personalized 1-on-1 walkthrough of Staycore. See real-time room inventory, AI OTA parsing, and direct booking checkout tailored for your property.',
+    title: 'Contact Staycore | Request a Hotel Software Demo',
+    description: 'Contact Staycore or book a live 1-on-1 hotel software demo. See real-time room availability, AI OTA parsing, and direct booking tools for your property.',
     path: '/contact',
-    ogImage: '/assets/images/contact-banner.png'
+    ogImage: '/assets/images/hotel-contact-reception-desk.webp'
+  },
+  resources: {
+    title: 'Hotel Management & Direct Booking Resources | Staycore',
+    description: 'Explore expert hotel technology guides. Learn how hotel management software, OTA aggregation, and direct booking websites reduce costs and increase revenue.',
+    path: '/resources',
+    ogImage: '/assets/images/hotel-management-dashboard.webp'
   },
   notFound: {
     title: '404 — Page Not Found | Staycore',

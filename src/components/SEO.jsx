@@ -9,7 +9,7 @@ export default function SEO({
   title,
   description,
   canonicalPath = '/',
-  ogImage = '/assets/images/hero-suite.jpg',
+  ogImage = '/assets/images/hotel-management-dashboard.webp',
   ogType = 'website',
   robots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   structuredData

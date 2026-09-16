@@ -1,14 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import SEO from '../components/SEO';
-import FaqAccordion, { FAQS } from '../components/FaqAccordion';
-import { SEO_PAGES, createBreadcrumbSchema, createFaqSchema, SOFTWARE_APPLICATION_SCHEMA } from '../data/seoData';
+import Breadcrumbs from '../components/Breadcrumbs';
+import FaqAccordion from '../components/FaqAccordion';
+import {
+  SEO_PAGES,
+  FEATURES_FAQS,
+  createBreadcrumbSchema,
+  createFaqSchema,
+  SOFTWARE_APPLICATION_SCHEMA
+} from '../data/seoData';
 
 export default function Features() {
+  const breadcrumbItems = [
+    { label: 'Platform Features', path: '/features' }
+  ];
+
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Platform Capabilities', path: '/features' }
+    { name: 'Platform Features', path: '/features' }
   ]);
-  const faqSchema = createFaqSchema(FAQS);
+  const faqSchema = createFaqSchema(FEATURES_FAQS);
 
   const featuresStructuredData = {
     '@context': 'https://schema.org',
@@ -33,25 +45,27 @@ export default function Features() {
       <section className="hero-section">
         <div className="hero-bg-media">
           <img
-            src="/assets/images/features-banner.png"
-            alt="Staycore Unified Platform Capabilities — Luxury Suite Showcase"
+            src="/assets/images/hotel-management-features-banner.webp"
+            alt="Staycore hotel management system features banner showcasing luxury suite and operational dashboard"
             fetchpriority="high"
             decoding="async"
-            width="1920"
-            height="800"
+            width="1672"
+            height="941"
           />
           <div className="hero-video-overlay" />
         </div>
-        <div className="container hero-content text-center" style={{ maxWidth: 920, position: 'relative', zIndex: 1 }}>
-          <div className="badge-pill">
+        <div className="container hero-content text-center" style={{ maxWidth: 940, position: 'relative', zIndex: 1 }}>
+          <Breadcrumbs items={breadcrumbItems} />
+
+          <div className="badge-pill" style={{ marginTop: 12 }}>
             <span className="dot" />
             <span>Platform Capabilities</span>
           </div>
           <h1 className="hero-title">
-            One system. Every part of <br /><span>your hotel’s bookings.</span>
+            Hotel Management System for <br /><span>Modern Property Operations.</span>
           </h1>
           <p className="hero-sub">
-            From the front desk to the OTAs to your own website — Staycore brings it all into one place. Eliminate manual friction, synchronize room availability, and empower your hospitality team.
+            From the front desk to your OTA channels to your own hotel website — Staycore unifies your hotel operations in one screen. Eliminate manual friction, synchronize room availability, and empower your hospitality team.
           </p>
           <div className="hero-cta-group" style={{ justifyContent: 'center' }}>
             <Link to="/contact" className="btn btn-primary btn-lg">
@@ -73,7 +87,11 @@ export default function Features() {
                 <span className="dot" />
                 <span>Feature 01</span>
               </div>
-              <h2>Know your rooms, at a glance.</h2>
+              <h2>Real-Time Room Availability &amp; Inventory Management</h2>
+              <div className="zero-click-box" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '14px 18px', margin: '14px 0 20px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                <strong style={{ color: 'var(--text-white)' }}>What is hotel operations software?</strong> Hotel operations software automates and organizes day-to-day lodging workflows, including live room inventory, housekeeping status tracking, front-desk check-ins, and guest billing.{' '}
+                <Link to="/resources/what-is-hotel-management-software" style={{ color: 'var(--accent-sage-light)', textDecoration: 'underline' }}>Read hotel software guide →</Link>
+              </div>
               <p className="lead" style={{ marginBottom: 24 }}>
                 A live visual map of every room across all your properties — free, occupied, or cleaning — updated in real time.
               </p>
@@ -82,29 +100,29 @@ export default function Features() {
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Live Status Matrix:</strong>{' '}
-                    <span>Instant room status updates the second a guest checks in, checks out, or extends.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Multi-Floor Room Availability Matrix</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Instant room status updates the second a guest checks in, checks out, or extends their stay.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Zero Double Bookings:</strong>{' '}
-                    <span>One single source of truth across walk-ins, phone reservations, and all OTAs.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Zero Double Bookings Across Channels</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>One single source of truth across walk-ins, phone reservations, and all OTA channels.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Mobile Housekeeping:</strong>{' '}
-                    <span>1-tap cleaning and readiness updates for front desk and housekeeping teams.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Mobile Housekeeping Readiness</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>1-tap cleaning and readiness updates for front desk and housekeeping teams.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Multi-Property View:</strong>{' '}
-                    <span>Switch between different wings, floors, and independent resort villas seamlessly.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Multi-Property View Across Independent Wings</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Switch between different wings, floors, and independent resort villas seamlessly.</span>
                   </div>
                 </li>
               </ul>
@@ -116,8 +134,8 @@ export default function Features() {
                 <span className="badge-pill" style={{ margin: 0, fontSize: '0.72rem' }}>Multi-Floor</span>
               </div>
               <img
-                src="/assets/images/hero-suite.jpg"
-                alt="Deluxe hotel room mockup in Staycore multi-floor live availability matrix"
+                src="/assets/images/hotel-management-dashboard.webp"
+                alt="Staycore multi-floor live room availability matrix mockup"
                 loading="lazy"
                 decoding="async"
                 width="600"
@@ -144,7 +162,11 @@ export default function Features() {
                 <span className="dot" />
                 <span>Feature 02</span>
               </div>
-              <h2>Every OTA booking in one live feed.</h2>
+              <h2>Automated OTA Booking Aggregation &amp; Channel Sync</h2>
+              <div className="zero-click-box" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '14px 18px', margin: '14px 0 20px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                <strong style={{ color: 'var(--text-white)' }}>What is OTA booking management?</strong> OTA booking management is the operational process of centralizing guest reservations from channels like Booking.com, MakeMyTrip, and Goibibo into a unified calendar to prevent overbooking.{' '}
+                <Link to="/ota-booking-management" style={{ color: 'var(--accent-sage-light)', textDecoration: 'underline' }}>Explore full OTA solution →</Link>
+              </div>
               <p className="lead" style={{ marginBottom: 24 }}>
                 Staycore’s AI automatically reads and organizes incoming OTA emails so you never have to check multiple extranet portals.
               </p>
@@ -153,32 +175,40 @@ export default function Features() {
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Instant AI Email Parsing:</strong>{' '}
-                    <span>Extracts guest names, stay dates, and payment totals from OTA emails in seconds.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Instant AI Email Parsing Pipeline</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Extracts guest names, stay dates, and payment totals from OTA emails in under 0.8 seconds.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Auto-Hold Inventory:</strong>{' '}
-                    <span>Locks availability instantly so two platforms never sell the same room simultaneously.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Instant Inventory Auto-Hold to Prevent Overbooking</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Locks availability instantly so two platforms never sell the same room simultaneously.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Unified Chronological Feed:</strong>{' '}
-                    <span>All bookings appear side-by-side whether from MakeMyTrip, Goibibo, or walk-ins.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Unified Multi-OTA Chronological Feed</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>All bookings appear side-by-side whether from MakeMyTrip, Goibibo, Booking.com, or walk-ins.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon">✓</span>
                   <div>
-                    <strong className="text-white">Repeat Guest History:</strong>{' '}
-                    <span>Recognize returning guests regardless of which platform they booked through.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Repeat Guest History Across Channels</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Recognize returning guests and their preferences regardless of which platform they booked through.</span>
                   </div>
                 </li>
               </ul>
+              <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <Link to="/ota-booking-management" className="btn btn-secondary">
+                  Explore OTA Management Solution →
+                </Link>
+                <Link to="/resources/what-is-ota-booking-management" className="btn btn-secondary" style={{ opacity: 0.85 }}>
+                  OTA Guide
+                </Link>
+              </div>
             </div>
 
             <div className="card-glass">
@@ -243,7 +273,11 @@ export default function Features() {
                 <span className="dot" />
                 <span>Feature 03</span>
               </div>
-              <h2>Own your direct bookings and save 20%.</h2>
+              <h2>Commission-Free Hotel Direct Booking Engine</h2>
+              <div className="zero-click-box" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '14px 18px', margin: '14px 0 20px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                <strong style={{ color: 'var(--text-white)' }}>What is a direct booking engine?</strong> A direct booking engine allows guests to reserve rooms straight on a hotel's website with immediate confirmation and zero third-party commission fees.{' '}
+                <Link to="/direct-hotel-booking" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>Explore direct booking solution →</Link>
+              </div>
               <p className="lead" style={{ marginBottom: 24 }}>
                 A custom-domain hotel website built for high conversion, search visibility, and commission-free guest checkout.
               </p>
@@ -252,37 +286,56 @@ export default function Features() {
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Custom Domain Website:</strong>{' '}
-                    <span>Bespoke design showcasing your suites, amenities, and location aesthetic.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Custom Domain Hotel Website</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Bespoke design showcasing your suites, amenities, and location aesthetic on your private domain.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Google & AI Search (AEO):</strong>{' '}
-                    <span>Structured schema ensures visibility on Google, ChatGPT, and Perplexity.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Google &amp; AI Search Discovery (AEO)</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                      Structured{' '}
+                      <a
+                        href="https://developers.google.com/search/docs/appearance/structured-data/hotel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: 'var(--accent-gold)', textDecoration: 'underline', display: 'inline-flex', alignItems: 'center', gap: 3 }}
+                      >
+                        schema.org/Hotel markup <ExternalLink size={12} />
+                      </a>{' '}
+                      ensures rich placement across Google search results, ChatGPT, and Perplexity.
+                    </span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Direct Booking Engine:</strong>{' '}
-                    <span>Mobile-first checkout supporting instant card and UPI payments with zero commissions.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Direct Booking Engine with Zero Commissions</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Mobile-first checkout supporting instant card and UPI payments with zero commissions taken by Staycore.</span>
                   </div>
                 </li>
                 <li>
                   <span className="check-icon" style={{ background: 'var(--accent-gold-soft)', color: 'var(--accent-gold)' }}>✓</span>
                   <div>
-                    <strong className="text-white">Promo Codes & Coupons:</strong>{' '}
-                    <span>Reward returning guests with private discount codes that sync to your calendar.</span>
+                    <h3 style={{ fontSize: '1rem', color: '#fff', margin: '0 0 2px' }}>Promo Codes &amp; Loyalty Coupons</h3>
+                    <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Reward returning guests with private discount codes that sync directly to your availability calendar.</span>
                   </div>
                 </li>
               </ul>
+              <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <Link to="/direct-hotel-booking" className="btn btn-gold">
+                  Explore Direct Booking System →
+                </Link>
+                <Link to="/website-only" className="btn btn-secondary">
+                  Hotel Website Builder
+                </Link>
+              </div>
             </div>
 
             <div className="card-glass">
               <img
-                src="/assets/images/hotel-lounge.jpg"
+                src="/assets/images/hotel-direct-booking-lounge.webp"
                 alt="Luxury hotel lounge driving commission-free direct reservations"
                 loading="lazy"
                 decoding="async"
@@ -290,10 +343,12 @@ export default function Features() {
                 height="280"
                 style={{ borderRadius: 14, width: '100%', height: 280, objectFit: 'cover', marginBottom: 20 }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 12 }}>
                 <div>
                   <h4 style={{ color: '#fff', marginBottom: 4 }}>Direct Booking Impact</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Avg. savings for 30-room hotel: <strong>$1,800+/month</strong></p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Avg. savings for a 30-room hotel: <strong>$1,800+/month</strong>
+                  </p>
                 </div>
                 <Link to="/website-only" className="btn btn-gold btn-sm">
                   Learn About Website Plan →
@@ -310,15 +365,15 @@ export default function Features() {
           <div className="section-header text-center">
             <div className="badge-pill">
               <span className="dot" />
-              <span>Common Inquiries</span>
+              <span>Operational Clarity</span>
             </div>
-            <h2>Frequently Asked Questions</h2>
+            <h2>Frequently Asked Questions on Hotel Operations</h2>
             <p className="lead" style={{ margin: '0 auto' }}>
-              Everything hoteliers want to know about onboarding, OTA synchronization, and commission-free revenue.
+              Everything hoteliers want to know about onboarding, OTA synchronization, multi-property management, and hardware requirements.
             </p>
           </div>
 
-          <FaqAccordion />
+          <FaqAccordion faqs={FEATURES_FAQS} />
         </div>
       </section>
 
@@ -328,11 +383,14 @@ export default function Features() {
           <div className="cta-banner">
             <h2>Ready to experience the unified Staycore system?</h2>
             <p className="lead" style={{ margin: '16px auto 36px' }}>
-              See how the room matrix, AI OTA aggregator, and direct booking engine work together seamlessly.
+              See how the room matrix, AI OTA aggregator, and direct booking engine work together seamlessly for your property.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
               <Link to="/contact" className="btn btn-primary btn-lg">
                 Book a Free Live Demo
+              </Link>
+              <Link to="/ota-booking-management" className="btn btn-secondary btn-lg">
+                OTA Booking Centralization
               </Link>
               <Link to="/website-only" className="btn btn-secondary btn-lg">
                 Explore Website-Only Plan
