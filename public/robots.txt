@@ -1,12 +1,36 @@
 # Staycore Robots Configuration
 # https://staycore.club
+# Optimized for Web Crawlers, Search Engines, and AI Answer Engines
 
 User-agent: *
 Allow: /
-
-# Disallow private and build assets
 Disallow: /dist/
 Disallow: /archive/
+
+# Verified AI Search & Answer Engine Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Machine-Readable AI Manifest
+# https://staycore.club/llms.txt
 
 # XML Sitemap Location
 Sitemap: https://staycore.club/sitemap.xml

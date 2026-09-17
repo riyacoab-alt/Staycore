@@ -76,6 +76,7 @@ export default function Footer() {
               <li><Link to="/resources/what-is-ota-booking-management">What is OTA Management?</Link></li>
               <li><Link to="/resources/ota-vs-direct-hotel-bookings">OTA vs Direct Hotel Bookings</Link></li>
               <li><Link to="/resources/what-should-a-hotel-website-include">Hotel Website Must-Haves</Link></li>
+              <li><Link to="/resources/how-hotel-reservation-systems-work">How Hotel Reservation Systems Work</Link></li>
             </ul>
           </div>
 
@@ -101,11 +102,16 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <div>
-            ©2026 COAB Solutions Private Limited. All rights reserved.
-
-
-
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+            <span>©2026 COAB Solutions Private Limited. All rights reserved.</span>
+            <span style={{ opacity: 0.4 }}>•</span>
+            <Link to="/privacy-policy" style={{ color: 'var(--text-secondary)', fontSize: '0.82rem', textDecoration: 'none' }}>
+              Privacy Policy
+            </Link>
+            <span style={{ opacity: 0.4 }}>•</span>
+            <Link to="/terms-of-service" style={{ color: 'var(--text-secondary)', fontSize: '0.82rem', textDecoration: 'none' }}>
+              Terms of Service
+            </Link>
           </div>
           <div className="coab-badge">
             <span>Built by</span> <strong>COAB</strong>

@@ -10,6 +10,56 @@ export const SITE_ORIGIN = (typeof window !== 'undefined' && window.location.ori
 export const BRAND_NAME = 'Staycore';
 export const LEGAL_NAME = 'COAB Solutions Private Limited';
 
+/**
+ * High-Impact Targeted SEO & AEO Keyword Clusters for StayCore
+ */
+export const MASTER_KEYWORDS = 'hotel management software, hotel management system, hotel booking software, hotel website builder, hotel reservation system, direct hotel booking, hotel booking engine, hotel room management, OTA booking management, hotel PMS, property management system, hotel website development, hotel SEO, hotel booking platform, online hotel reservations, hotel management solution, hotel technology, hospitality management software, hotel booking system, direct booking platform for hotels, hotel website with booking, online hotel booking system, hotel OTA management, hotel booking aggregation, hotel reservation management, hotel booking dashboard, custom hotel website, hotel website with online booking, hotel website SEO, StayCore';
+
+export const KEYWORD_CLUSTERS = {
+  core: [
+    'hotel management software',
+    'hotel management system',
+    'hotel booking software',
+    'hotel reservation system',
+    'hotel PMS',
+    'hotel room management',
+    'property management system',
+    'hospitality management software',
+    'StayCore'
+  ],
+  directBooking: [
+    'direct hotel booking',
+    'hotel booking engine',
+    'hotel website with booking',
+    'online hotel booking system',
+    'direct booking platform for hotels',
+    'hotel booking system',
+    'hotel booking platform',
+    '0% commission hotel booking',
+    'StayCore'
+  ],
+  otaManagement: [
+    'OTA booking management',
+    'hotel OTA management',
+    'hotel booking aggregation',
+    'hotel reservation management',
+    'hotel booking dashboard',
+    'online hotel reservations',
+    'automated AI booking parser',
+    'StayCore'
+  ],
+  website: [
+    'hotel website builder',
+    'hotel website development',
+    'custom hotel website',
+    'hotel website with online booking',
+    'hotel website with booking',
+    'hotel website SEO',
+    'hotel SEO',
+    'StayCore'
+  ]
+};
+
 export const BASE_ORGANIZATION_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -67,6 +117,7 @@ export const SOFTWARE_APPLICATION_SCHEMA = {
     priceCurrency: 'USD',
     description: 'Custom tailored quote based on property keys and selected operational modules.'
   },
+  keywords: MASTER_KEYWORDS,
   featureList: [
     'Live Multi-Property Room Availability Matrix',
     'AI-Automated OTA Confirmation Email Parsing (MakeMyTrip, Goibibo, Booking.com, Agoda, Expedia)',
@@ -83,6 +134,7 @@ export const WEBSITE_SCHEMA = {
   '@id': `${SITE_ORIGIN}/#website`,
   url: SITE_ORIGIN,
   name: BRAND_NAME,
+  keywords: MASTER_KEYWORDS,
   publisher: {
     '@id': `${SITE_ORIGIN}/#organization`
   }
@@ -272,17 +324,61 @@ export const DIRECT_BOOKING_FAQS = [
   }
 ];
 
+export const CONTACT_FAQS = [
+  {
+    q: 'What is covered during a live Staycore software demonstration?',
+    a: 'A 1-on-1 demonstration covers live room availability matrix management, automated AI parsing of OTA confirmation emails, direct booking website setup on your custom domain, and the staff mobile interface.'
+  },
+  {
+    q: 'Does our hotel need specialized servers or local hardware to use Staycore?',
+    a: 'No specialized hardware or local servers are needed. Staycore operates securely in any modern web browser across desktop PCs, laptops, tablets, and smartphones.'
+  },
+  {
+    q: 'Can our hotel retain our existing domain name for direct bookings?',
+    a: 'Yes. Staycore connects directly to your existing hotel domain name (e.g., yourhotel.com) with automated SSL encryption, preserving your existing brand authority and search equity.'
+  },
+  {
+    q: 'How long does property onboarding and setup typically take?',
+    a: 'Standard property onboarding takes between 24 and 48 hours. Our team assists with room catalog setup, domain configuration, and staff walkthroughs.'
+  },
+  {
+    q: 'What OTA channels can be integrated with Staycore?',
+    a: 'Staycore’s AI confirmation parser processes booking confirmation emails from MakeMyTrip, Goibibo, Booking.com, Agoda, and Expedia, syncing reservation data directly into your master calendar.'
+  }
+];
+
+export const ABOUT_FAQS = [
+  {
+    q: 'What is Staycore?',
+    a: 'Staycore is a hospitality technology platform engineered to unify hotel operations, real-time room availability, multi-channel OTA booking management, and direct hotel booking websites into a single interface.'
+  },
+  {
+    q: 'Who develops and maintains Staycore?',
+    a: 'Staycore is engineered and maintained by COAB Solutions Private Limited, a technology firm based in Kerala, India.'
+  },
+  {
+    q: 'What types of hospitality properties use Staycore?',
+    a: 'Staycore is built for independent hotels, boutique retreats, heritage villas, homestays, and multi-property resort groups seeking streamlined operations and commission-free direct bookings.'
+  },
+  {
+    q: 'What core operational problem does Staycore solve?',
+    a: 'Staycore eliminates the operational friction of managing scattered registers, spreadsheets, and multiple open OTA extranets, preventing overbookings and centralizing property workflows.'
+  }
+];
+
 /**
  * Builds a valid Schema.org Article structured data object for educational guides
  * @param {Object} guide
  */
 export function createArticleSchema(guide) {
   if (!guide) return null;
+  const guideKeywords = [guide.primaryKeyword, ...(guide.secondaryKeywords || []), 'hotel management software', 'StayCore'].filter(Boolean).join(', ');
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: guide.title,
     description: guide.metaDescription,
+    keywords: guideKeywords,
     url: `${SITE_ORIGIN}/resources/${guide.slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -307,30 +403,35 @@ export const SEO_PAGES = {
   home: {
     title: 'Hotel Management Software for Modern Hotels | Staycore',
     description: 'Manage hotel operations, room availability, OTA bookings, and your own direct booking hotel website with Staycore’s unified hotel management platform.',
+    keywords: MASTER_KEYWORDS,
     path: '/',
     ogImage: '/assets/images/hotel-management-dashboard.webp'
   },
   features: {
     title: 'Hotel Management System & Operations Features | Staycore',
     description: 'Explore Staycore’s hotel management system: live room availability matrix, automated AI OTA email parsing, multi-property views, and direct booking engine.',
+    keywords: 'hotel management software, hotel management system, hotel booking software, hotel reservation system, hotel PMS, hotel room management, property management system, hospitality management software, live room availability matrix, housekeeping mobile status, StayCore',
     path: '/features',
     ogImage: '/assets/images/hotel-management-features-banner.webp'
   },
   otaBooking: {
     title: 'OTA Booking Management Software for Hotels | Staycore',
     description: 'Centralize hotel bookings from MakeMyTrip, Goibibo, Booking.com, and Expedia with Staycore’s automated AI OTA email parser and real-time inventory guard.',
+    keywords: 'OTA booking management, hotel OTA management, hotel booking aggregation, hotel reservation management, hotel booking dashboard, online hotel reservations, automated AI booking parser, hotel booking system, StayCore',
     path: '/ota-booking-management',
     ogImage: '/assets/images/hotel-management-features-banner.webp'
   },
   websiteOnly: {
     title: 'Hotel Website Builder | Direct Booking Engine | Staycore',
     description: 'Get a custom-domain hotel website with Staycore’s 0% commission direct booking engine, AI search visibility, and lightweight reservation portal.',
+    keywords: 'hotel website builder, hotel website development, custom hotel website, hotel website with online booking, hotel website with booking, hotel website SEO, hotel SEO, direct booking engine, direct hotel booking, StayCore',
     path: '/website-only',
     ogImage: '/assets/images/hotel-website-builder-banner.webp'
   },
   directBooking: {
     title: 'Direct Hotel Booking Software & 0% Commission Engine | Staycore',
     description: 'Boost direct hotel reservations with Staycore’s commission-free direct booking engine. Mobile-first checkout, instant UPI & card payments, and promo codes.',
+    keywords: 'direct hotel booking, hotel booking engine, hotel website with booking, online hotel booking system, direct booking platform for hotels, 0% commission hotel booking, hotel booking system, hotel booking platform, StayCore',
     path: '/direct-hotel-booking',
     ogImage: '/assets/images/hotel-direct-booking-lounge.webp'
   },
@@ -338,25 +439,41 @@ export const SEO_PAGES = {
   about: {
     title: 'About Staycore | Hospitality Technology Built by COAB',
     description: 'Learn how Staycore was built by COAB to solve operational friction in hospitality. Unified hotel management software, OTA aggregation, and direct bookings.',
+    keywords: 'Staycore, COAB Solutions, hotel management software company, hospitality technology, hotel PMS platform, hotel reservation system, hotel technology',
     path: '/about',
     ogImage: '/assets/images/hotel-room-availability-matrix.webp'
   },
   contact: {
     title: 'Contact Staycore | Request a Hotel Software Demo',
     description: 'Contact Staycore or book a live 1-on-1 hotel software demo. See real-time room availability, AI OTA parsing, and direct booking tools for your property.',
+    keywords: 'Staycore demo, contact hotel software, hotel PMS consultation, book hotel software demo, hotel management solution, StayCore',
     path: '/contact',
     ogImage: '/assets/images/hotel-contact-reception-desk.webp'
   },
   resources: {
     title: 'Hotel Management & Direct Booking Resources | Staycore',
     description: 'Explore expert hotel technology guides. Learn how hotel management software, OTA aggregation, and direct booking websites reduce costs and increase revenue.',
+    keywords: 'hotel management software, hotel technology, direct hotel booking, OTA booking management, hotel website builder, hotel PMS, hotel SEO, StayCore',
     path: '/resources',
-    ogImage: '/assets/images/hotel-management-dashboard.webp'
+    ogImage: '/assets/images/hotel-resources-knowledge-banner.webp'
   },
   notFound: {
     title: '404 — Page Not Found | Staycore',
     description: 'The requested hotel operations page could not be located. Explore our platform features or return to Staycore homepage.',
+    keywords: 'Staycore, 404',
     path: '/404',
     robots: 'noindex, follow'
+  },
+  privacyPolicy: {
+    title: 'Privacy Policy | Staycore Hotel Management Software',
+    description: 'Staycore’s commitment to hotelier data sovereignty, guest privacy, 0% commission payment handling, and zero-monetization data policies.',
+    keywords: 'Staycore privacy policy, hotelier data sovereignty, guest privacy, hotel management software terms',
+    path: '/privacy-policy'
+  },
+  termsOfService: {
+    title: 'Terms of Service | Staycore Hotel Management Platform',
+    description: 'Review the subscription terms, service policies, zero-commission guarantee, and operational guidelines governing Staycore software.',
+    keywords: 'Staycore terms of service, hotel management platform terms, 0% commission guarantee, subscription policies',
+    path: '/terms-of-service'
   }
 };

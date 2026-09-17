@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0, 0, 0, 0.08)" />
+      <stop offset="100%" stop-color="rgba(0, 0, 0, 0.15)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Crisp White Squircle Badge -->
+  <rect width="512" height="512" rx="112" fill="#ffffff" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="url(#cardBorder)" stroke-width="8" />
+
+  <!-- Staycore Architectural Towers Emblem in Solid Dark Luxury Obsidian -->
+  <g transform="translate(256, 256) scale(0.56676) translate(-540, -540)" fill="#0a0c0f">
+    <path d="M505.98829 826.53128H574.0156V470.84376L505.98829 504.85548V826.53128ZM787.71878 857.59378H673.10159V272.66407L505.98829 356.22267V470.1289L605.0742 420.58204V857.59378H474.92579V520.3867L406.89845 554.39846V857.59378H292.28126V826.53128H375.83595V535.1992L474.92579 485.65626V337.02345L704.16409 222.40625V826.53128H787.71878V857.59378" />
+  </g>
+</svg>

@@ -37,6 +37,7 @@ export default function DirectHotelBooking() {
       <SEO
         title={SEO_PAGES.directBooking.title}
         description={SEO_PAGES.directBooking.description}
+        keywords={SEO_PAGES.directBooking.keywords}
         canonicalPath={SEO_PAGES.directBooking.path}
         ogImage={SEO_PAGES.directBooking.ogImage}
         structuredData={directStructuredData}

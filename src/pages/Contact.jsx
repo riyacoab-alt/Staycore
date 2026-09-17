@@ -4,11 +4,14 @@ import { Phone, Mail, MapPin, Globe, Instagram, Linkedin, MessageSquare, Externa
 import DemoBookingWidget from '../components/DemoBookingWidget';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SEO from '../components/SEO';
+import FaqAccordion from '../components/FaqAccordion';
 import {
   SEO_PAGES,
   SITE_ORIGIN,
   createBreadcrumbSchema,
-  BASE_ORGANIZATION_SCHEMA
+  createFaqSchema,
+  BASE_ORGANIZATION_SCHEMA,
+  CONTACT_FAQS
 } from '../data/seoData';
 
 export default function Contact({ onToast }) {
@@ -30,12 +33,15 @@ export default function Contact({ onToast }) {
     mainEntity: BASE_ORGANIZATION_SCHEMA
   };
 
+  const faqSchema = createFaqSchema(CONTACT_FAQS);
+
   const contactStructuredData = {
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbSchema,
       contactPageSchema,
-      BASE_ORGANIZATION_SCHEMA
+      BASE_ORGANIZATION_SCHEMA,
+      faqSchema
     ]
   };
 
@@ -44,6 +50,7 @@ export default function Contact({ onToast }) {
       <SEO
         title={SEO_PAGES.contact.title}
         description={SEO_PAGES.contact.description}
+        keywords={SEO_PAGES.contact.keywords}
         canonicalPath={SEO_PAGES.contact.path}
         ogImage={SEO_PAGES.contact.ogImage}
         structuredData={contactStructuredData}
@@ -259,6 +266,24 @@ export default function Contact({ onToast }) {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Section */}
+      <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', padding: '60px 0' }}>
+        <div className="container" style={{ maxWidth: 840 }}>
+          <div className="section-header text-center" style={{ marginBottom: 36 }}>
+            <div className="badge-pill">
+              <span className="dot" />
+              <span>Demonstration &amp; Onboarding</span>
+            </div>
+            <h2>Frequently Asked Questions About Demos &amp; Setup</h2>
+            <p className="lead" style={{ margin: '0 auto' }}>
+              Common questions about booking a live software walkthrough, system requirements, and property onboarding.
+            </p>
+          </div>
+
+          <FaqAccordion faqs={CONTACT_FAQS} />
         </div>
       </section>
     </main>

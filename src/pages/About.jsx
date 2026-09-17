@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, ShieldCheck, HeartHandshake, Zap, Building } from 'lucide-react';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import FaqAccordion from '../components/FaqAccordion';
 import {
   SEO_PAGES,
   SITE_ORIGIN,
   createBreadcrumbSchema,
-  BASE_ORGANIZATION_SCHEMA
+  createFaqSchema,
+  BASE_ORGANIZATION_SCHEMA,
+  ABOUT_FAQS
 } from '../data/seoData';
 
 export default function About() {
@@ -29,12 +32,15 @@ export default function About() {
     mainEntity: BASE_ORGANIZATION_SCHEMA
   };
 
+  const faqSchema = createFaqSchema(ABOUT_FAQS);
+
   const aboutStructuredData = {
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbSchema,
       aboutPageSchema,
-      BASE_ORGANIZATION_SCHEMA
+      BASE_ORGANIZATION_SCHEMA,
+      faqSchema
     ]
   };
 
@@ -43,6 +49,7 @@ export default function About() {
       <SEO
         title={SEO_PAGES.about.title}
         description={SEO_PAGES.about.description}
+        keywords={SEO_PAGES.about.keywords}
         canonicalPath={SEO_PAGES.about.path}
         ogImage={SEO_PAGES.about.ogImage}
         structuredData={aboutStructuredData}
@@ -239,6 +246,24 @@ export default function About() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions About Staycore */}
+      <section style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', padding: '60px 0' }}>
+        <div className="container" style={{ maxWidth: 840 }}>
+          <div className="section-header text-center" style={{ marginBottom: 36 }}>
+            <div className="badge-pill">
+              <span className="dot" />
+              <span>Entity &amp; Operations</span>
+            </div>
+            <h2>Frequently Asked Questions About Staycore</h2>
+            <p className="lead" style={{ margin: '0 auto' }}>
+              Learn more about our platform engineering, company background, and hospitality solutions.
+            </p>
+          </div>
+
+          <FaqAccordion faqs={ABOUT_FAQS} />
         </div>
       </section>
 

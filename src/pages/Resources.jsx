@@ -32,8 +32,19 @@ export default function Resources() {
       breadcrumbSchema,
       {
         '@type': 'CollectionPage',
+        '@id': `${SITE_ORIGIN}/resources#collection`,
+        url: `${SITE_ORIGIN}/resources`,
         name: 'Staycore Hotel Management Knowledge Hub',
-        description: 'Comprehensive guides on hotel management software, OTA booking centralization, and commission-free direct hotel websites.'
+        description: 'Comprehensive guides on hotel management software, OTA booking centralization, and commission-free direct hotel websites.',
+        publisher: {
+          '@id': `${SITE_ORIGIN}/#organization`
+        },
+        hasPart: GUIDES.map(g => ({
+          '@type': 'Article',
+          headline: g.title,
+          url: `${SITE_ORIGIN}/resources/${g.slug}`,
+          description: g.metaDescription
+        }))
       }
     ]
   };
@@ -43,6 +54,7 @@ export default function Resources() {
       <SEO
         title={SEO_PAGES.resources.title}
         description={SEO_PAGES.resources.description}
+        keywords={SEO_PAGES.resources.keywords}
         canonicalPath={SEO_PAGES.resources.path}
         ogImage={SEO_PAGES.resources.ogImage}
         structuredData={resourcesStructuredData}
@@ -50,7 +62,21 @@ export default function Resources() {
 
       {/* Page Hero */}
       <section className="hero-section" style={{ paddingBottom: 40 }}>
-        <div className="container text-center" style={{ maxWidth: 900, position: 'relative', zIndex: 1 }}>
+        <div className="hero-bg-media">
+          <picture>
+            <source srcSet="/assets/images/hotel-resources-knowledge-banner.webp" type="image/webp" />
+            <img
+              src="/assets/images/ChatGPT Image Sep 17, 2026, 09_11_48 PM.png"
+              alt="Hotelier workstation with laptop displaying direct booking website"
+              fetchpriority="high"
+              decoding="async"
+              width="1984"
+              height="793"
+            />
+          </picture>
+          <div className="hero-video-overlay" />
+        </div>
+        <div className="container hero-content text-center" style={{ maxWidth: 900, position: 'relative', zIndex: 1 }}>
           <Breadcrumbs items={breadcrumbItems} />
 
           <div className="badge-pill" style={{ marginTop: 12 }}>

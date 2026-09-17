@@ -4,10 +4,12 @@ import { Clock, Calendar, ArrowRight, ArrowLeft, CheckCircle2, BookOpen, Externa
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { getGuideBySlug, GUIDES } from '../data/guidesData';
+import FaqAccordion from '../components/FaqAccordion';
 import {
   SITE_ORIGIN,
   createBreadcrumbSchema,
-  createArticleSchema
+  createArticleSchema,
+  createFaqSchema
 } from '../data/seoData';
 
 export default function GuideDetail() {
@@ -29,22 +31,26 @@ export default function GuideDetail() {
   ]);
 
   const articleSchema = createArticleSchema(guide);
+  const faqSchema = guide.faqs ? createFaqSchema(guide.faqs) : null;
 
   const guideStructuredData = {
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbSchema,
-      articleSchema
+      articleSchema,
+      ...(faqSchema ? [faqSchema] : [])
     ]
   };
 
   const otherGuides = GUIDES.filter(g => g.slug !== guide.slug).slice(0, 2);
+  const guideKeywords = [guide.primaryKeyword, ...(guide.secondaryKeywords || []), 'hotel management software', 'StayCore'].filter(Boolean).join(', ');
 
   return (
     <main>
       <SEO
         title={guide.metaTitle}
         description={guide.metaDescription}
+        keywords={guideKeywords}
         canonicalPath={`/resources/${guide.slug}`}
         structuredData={guideStructuredData}
       />
@@ -215,6 +221,17 @@ export default function GuideDetail() {
               </div>
             </div>
           </div>
+
+          {/* Guide FAQ Section (AEO Question-First Answers) */}
+          {guide.faqs && guide.faqs.length > 0 && (
+            <div style={{ marginTop: 48 }}>
+              <FaqAccordion
+                items={guide.faqs}
+                title="Frequently Asked Questions"
+                subtitle={`Direct operational answers regarding ${guide.primaryKeyword}`}
+              />
+            </div>
+          )}
 
           {/* Content-to-Conversion Box: Connect to Staycore Solution */}
           <div className="card-glass" style={{ marginTop: 50, padding: 32, border: '1px solid var(--accent-sage-border)', background: 'linear-gradient(180deg, rgba(94,129,114,0.12) 0%, rgba(18,22,29,0.85) 100%)' }}>

@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
-import { SITE_ORIGIN, BRAND_NAME } from '../data/seoData';
+import { SITE_ORIGIN, BRAND_NAME, MASTER_KEYWORDS } from '../data/seoData';
 
 /**
  * SEO Head Manager Component
- * Dynamically synchronizes document title, canonical URL, meta tags, and JSON-LD structured data.
+ * Dynamically synchronizes document title, canonical URL, meta tags, targeted keywords, and JSON-LD structured data.
  */
 export default function SEO({
   title,
   description,
+  keywords = MASTER_KEYWORDS,
   canonicalPath = '/',
   ogImage = '/assets/images/hotel-management-dashboard.webp',
   ogType = 'website',
@@ -52,6 +53,7 @@ export default function SEO({
 
     // 2. Standard Meta
     setMeta('description', description);
+    setMeta('keywords', keywords || MASTER_KEYWORDS);
     setMeta('robots', robots);
 
     // 3. Canonical Link
@@ -62,8 +64,12 @@ export default function SEO({
     setMeta('og:description', description, true);
     setMeta('og:url', canonicalUrl, true);
     setMeta('og:image', fullOgImage, true);
+    setMeta('og:image:width', '1200', true);
+    setMeta('og:image:height', '630', true);
+    setMeta('og:image:alt', title, true);
     setMeta('og:type', ogType, true);
     setMeta('og:site_name', BRAND_NAME, true);
+    setMeta('og:locale', 'en_US', true);
 
     // 5. Twitter Card Tags
     setMeta('twitter:card', 'summary_large_image');
@@ -71,6 +77,8 @@ export default function SEO({
     setMeta('twitter:description', description);
     setMeta('twitter:image', fullOgImage);
     setMeta('twitter:url', canonicalUrl);
+    setMeta('twitter:site', '@staycore');
+    setMeta('twitter:creator', '@coabclub');
 
     // 6. JSON-LD Structured Data
     const SCRIPT_ID = 'seo-dynamic-json-ld';
@@ -94,7 +102,7 @@ export default function SEO({
         scriptEl.remove();
       }
     };
-  }, [title, description, canonicalPath, ogImage, ogType, robots, structuredData]);
+  }, [title, description, keywords, canonicalPath, ogImage, ogType, robots, structuredData]);
 
   return null;
 }

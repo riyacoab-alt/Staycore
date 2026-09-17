@@ -37,6 +37,7 @@ export default function OtaBookingManagement() {
       <SEO
         title={SEO_PAGES.otaBooking.title}
         description={SEO_PAGES.otaBooking.description}
+        keywords={SEO_PAGES.otaBooking.keywords}
         canonicalPath={SEO_PAGES.otaBooking.path}
         ogImage={SEO_PAGES.otaBooking.ogImage}
         structuredData={otaStructuredData}

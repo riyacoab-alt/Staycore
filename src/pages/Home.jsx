@@ -42,6 +42,7 @@ export default function Home({ onToast }) {
       <SEO
         title={SEO_PAGES.home.title}
         description={SEO_PAGES.home.description}
+        keywords={SEO_PAGES.home.keywords}
         canonicalPath={SEO_PAGES.home.path}
         ogImage={SEO_PAGES.home.ogImage}
         structuredData={homeStructuredData}

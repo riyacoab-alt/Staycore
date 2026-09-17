@@ -56,6 +56,7 @@ export default function WebsiteOnly() {
       <SEO
         title={SEO_PAGES.websiteOnly.title}
         description={SEO_PAGES.websiteOnly.description}
+        keywords={SEO_PAGES.websiteOnly.keywords}
         canonicalPath={SEO_PAGES.websiteOnly.path}
         ogImage={SEO_PAGES.websiteOnly.ogImage}
         structuredData={websiteOnlyStructuredData}

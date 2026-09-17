@@ -86,6 +86,20 @@ export const GUIDES = [
         h2: 'How to Choose the Right System for Your Property',
         p: 'Independent hoteliers do not need complex enterprise systems with hundreds of unused menus. Look for speed, intuitive room matrix visuals, automated OTA conflict prevention, and direct booking ownership that lets you keep 100% of guest revenue.'
       }
+    ],
+    faqs: [
+      {
+        q: 'What is the difference between a Hotel PMS and Hotel Management Software?',
+        a: 'While the terms are often used interchangeably, a traditional Property Management System (PMS) focused primarily on front-desk check-in and night audits. Modern hotel management software unifies PMS functions with real-time multi-channel OTA aggregation, housekeeping mobile status, and 0% commission direct booking engine technology.'
+      },
+      {
+        q: 'Can small boutique hotels and homestays use hotel management software without local servers?',
+        a: 'Yes. Modern cloud-native hotel software runs entirely in web browsers on laptops, tablets, and smartphones, eliminating the need for expensive on-premise servers, IT maintenance, or hardware setup.'
+      },
+      {
+        q: 'How quickly does a hotel management system prevent double bookings?',
+        a: 'An effective system updates room inventory across all connected channels and front-desk registers within seconds of a confirmed walk-in, website reservation, or OTA booking confirmation email.'
+      }
     ]
   },
   {
@@ -155,6 +169,20 @@ export const GUIDES = [
         h2: 'Handling Modifications and Cancellations',
         p: 'Guest travel plans change frequently. When an OTA sends a cancellation or date alteration notice, the system parses the modification and immediately updates room availability, freeing the inventory for walk-ins or direct website visitors.'
       }
+    ],
+    faqs: [
+      {
+        q: 'Which OTAs can be automatically aggregated without complex hardware?',
+        a: 'Platforms like Staycore automatically ingest and parse booking confirmation emails from major Online Travel Agencies including MakeMyTrip, Goibibo, Booking.com, Agoda, and Expedia, syncing reservation data directly into your master calendar in under 0.8 seconds.'
+      },
+      {
+        q: 'What happens when an OTA guest alters dates or cancels their reservation?',
+        a: 'When the OTA sends a date alteration or cancellation confirmation email, the automated AI parser reads the update, adjusts the reservation calendar, and immediately frees the room inventory on the availability matrix.'
+      },
+      {
+        q: 'Why is automated email parsing more reliable for independent hotels than manual extranet logging?',
+        a: 'Manual tracking relies on staff constantly monitoring multiple extranet portals and inboxes. Automated parsing captures booking details 24/7 without delays, locking inventory instantly and preventing human data-entry errors.'
+      }
     ]
   },
   {
@@ -216,6 +244,20 @@ export const GUIDES = [
           'Fast, Mobile-First Checkout: Ensure booking on your website takes under 60 seconds with instant UPI, Google Pay, Apple Pay, and credit cards.',
           'Structured SEO & AI Search Visibility: Ensure your property website has valid schema.org/Hotel structured data so Google Hotel Search and AI assistants (ChatGPT, Perplexity) recommend your official direct booking channel.'
         ]
+      }
+    ],
+    faqs: [
+      {
+        q: 'How can hoteliers encourage OTA guests to book directly next time?',
+        a: 'Hoteliers can offer exclusive direct booking perks (such as complimentary breakfast, early check-in, or exclusive promo codes) on their official website, combined with welcoming returning guest communications via WhatsApp or email.'
+      },
+      {
+        q: 'Does having a direct booking website mean disconnecting from OTAs?',
+        a: 'No. A healthy distribution strategy uses OTAs for top-of-funnel discovery of new international and out-of-state guests, while using the official hotel website to capture repeat visitors and direct search traffic at 0% commission.'
+      },
+      {
+        q: 'What is the typical commission fee charged by major OTAs?',
+        a: 'Major Online Travel Agencies typically charge between 15% and 25% of the total booking value, depending on market, property tier, and visibility agreements.'
       }
     ]
   },
@@ -288,6 +330,20 @@ export const GUIDES = [
       {
         h2: 'Why Website-Only Solutions Are Ideal for Growing Hotels',
         p: 'Hotels that are not ready to overhaul their entire front desk can start with a standalone, custom-domain hotel website. Staycore’s Website-Only plan provides this complete setup, paired with a simple portal to view upcoming reservations, with a seamless upgrade path to the full PMS webapp anytime.'
+      }
+    ],
+    faqs: [
+      {
+        q: 'Can a hotel website have a direct booking engine without paying monthly transaction commissions?',
+        a: 'Yes. Modern website builders like Staycore offer 0% commission direct booking engines where you only pay standard merchant gateway processing fees (such as Stripe or Razorpay) directly to your bank, retaining 100% of room revenues.'
+      },
+      {
+        q: 'Why is Schema.org structured data essential for hotel websites?',
+        a: 'Embedding Schema.org/Hotel and Schema.org/Offer markup enables Google Search, Google Maps, and AI answer engines (ChatGPT, Perplexity) to automatically read live room availability, amenities, and direct rates.'
+      },
+      {
+        q: 'What is the most critical factor for mobile hotel booking conversion?',
+        a: 'Fast page load times under 2.5 seconds, clear room photography, and a 2-step checkout supporting instant UPI and digital wallets without requiring mandatory user account creation.'
       }
     ]
   },
@@ -362,6 +418,20 @@ export const GUIDES = [
       {
         h2: 'Key Evaluation Criteria for Independent Hoteliers',
         p: 'When selecting reservation software, independent and boutique operators should prioritize fast user onboarding, reliable overbooking prevention, mobile accessibility, and revenue ownership over complex enterprise bloat.'
+      }
+    ],
+    faqs: [
+      {
+        q: 'How does a hotel reservation system prevent double bookings during peak check-in hours?',
+        a: 'By utilizing an instant inventory locking mechanism. The moment a booking is made via an OTA, direct website, or front-desk walk-in, the system marks the room unavailable across all other channels within seconds.'
+      },
+      {
+        q: 'Can hotel managers access reservation calendars remotely on mobile devices?',
+        a: 'Yes. Modern cloud-native reservation systems provide secure web-based access across desktops, tablets, and smartphones, allowing owners and managers to monitor live occupancy and arrivals from anywhere.'
+      },
+      {
+        q: 'What is the difference between a Central Reservation System (CRS) and a lightweight hotel PMS?',
+        a: 'Traditional CRSs were built for large enterprise hotel chains with multi-property call centers. Modern lightweight hotel platforms combine CRS channel distribution and PMS front-desk matrix functionality into a single affordable browser dashboard for independent properties.'
       }
     ]
   }

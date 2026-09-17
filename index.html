@@ -8,6 +8,7 @@
   <!-- Primary SEO Tags -->
   <title>Hotel Management Software for Modern Hotels | Staycore</title>
   <meta name="description" content="Manage hotel operations, room availability, OTA bookings, and your own direct booking hotel website with Staycore’s unified hotel management platform." />
+  <meta name="keywords" content="hotel management software, hotel management system, hotel booking software, hotel website builder, hotel reservation system, direct hotel booking, hotel booking engine, hotel room management, OTA booking management, hotel PMS, property management system, hotel website development, hotel SEO, hotel booking platform, online hotel reservations, hotel management solution, hotel technology, hospitality management software, hotel booking system, direct booking platform for hotels, hotel website with booking, online hotel booking system, hotel OTA management, hotel booking aggregation, hotel reservation management, hotel booking dashboard, custom hotel website, hotel website with online booking, hotel website SEO, StayCore" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://staycore.club/" />
 
@@ -28,7 +29,11 @@
   <meta name="twitter:image" content="https://staycore.club/assets/images/hotel-management-dashboard.webp" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏨</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
 
   <!-- Preconnect & Optimize Critical Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,30 +43,45 @@
   <!-- Preload Critical Above-The-Fold LCP Image -->
   <link rel="preload" as="image" href="/assets/images/hotel-management-dashboard.webp" fetchpriority="high" />
 
-  <!-- Base Organization Structured Data (Available in Initial HTML) -->
+  <!-- Base Organization & WebSite Structured Data (Available in Initial HTML) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Staycore",
-    "legalName": "COAB Solutions Private Limited",
-    "url": "https://staycore.club",
-    "logo": "https://staycore.club/assets/images/staycore-logo.png",
-    "description": "Hospitality technology platform providing hotel management software, AI OTA aggregation, and commission-free direct booking engines.",
-    "telephone": "+919633277995",
-    "email": "coabgroup@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "37/2256, Kollamkudi House, Kollamkudimugal, Thrikkakara",
-      "addressLocality": "Ernakulam",
-      "addressRegion": "Kerala",
-      "postalCode": "682021",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://coab.club/",
-      "https://www.instagram.com/coab.club/",
-      "https://www.linkedin.com/company/coabclub/posts/?feedView=all"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://staycore.club/#organization",
+        "name": "Staycore",
+        "legalName": "COAB Solutions Private Limited",
+        "url": "https://staycore.club",
+        "logo": "https://staycore.club/assets/images/staycore-logo.png",
+        "description": "Hospitality technology platform providing hotel management software, AI OTA aggregation, and commission-free direct booking engines.",
+        "telephone": "+919633277995",
+        "email": "coabgroup@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "37/2256, Kollamkudi House, Kollamkudimugal, Thrikkakara",
+          "addressLocality": "Ernakulam",
+          "addressRegion": "Kerala",
+          "postalCode": "682021",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://coab.club/",
+          "https://www.instagram.com/coab.club/",
+          "https://www.linkedin.com/company/coabclub/posts/?feedView=all"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://staycore.club/#website",
+        "url": "https://staycore.club",
+        "name": "Staycore",
+        "keywords": "hotel management software, hotel management system, hotel booking software, hotel website builder, hotel reservation system, direct hotel booking, hotel booking engine, hotel room management, OTA booking management, hotel PMS, property management system, hotel website development, hotel SEO, hotel booking platform, online hotel reservations, hotel management solution, hotel technology, hospitality management software, hotel booking system, direct booking platform for hotels, hotel website with booking, online hotel booking system, hotel OTA management, hotel booking aggregation, hotel reservation management, hotel booking dashboard, custom hotel website, hotel website with online booking, hotel website SEO, StayCore",
+        "publisher": {
+          "@id": "https://staycore.club/#organization"
+        }
+      }
     ]
   }
   </script>

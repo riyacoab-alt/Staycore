@@ -36,6 +36,7 @@ export default function Features() {
       <SEO
         title={SEO_PAGES.features.title}
         description={SEO_PAGES.features.description}
+        keywords={SEO_PAGES.features.keywords}
         canonicalPath={SEO_PAGES.features.path}
         ogImage={SEO_PAGES.features.ogImage}
         structuredData={featuresStructuredData}
