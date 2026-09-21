@@ -23,6 +23,20 @@ export default function Resources() {
     { name: 'Resources & Guides', path: '/resources' }
   ]);
 
+  const handleCategorySelect = (cat, shouldScroll = true) => {
+    setSelectedCategory(cat);
+    if (shouldScroll) {
+      const gridEl = document.getElementById('guides-grid');
+      if (gridEl) {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(gridEl, { offset: -90, duration: 1.0 });
+        } else {
+          gridEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
+
   const filteredGuides = selectedCategory === 'All Topics'
     ? GUIDES
     : GUIDES.filter(g => g.category === selectedCategory);
@@ -80,9 +94,22 @@ export default function Resources() {
         <div className="container hero-content text-center" style={{ maxWidth: 900, position: 'relative', zIndex: 1 }}>
           <Breadcrumbs items={breadcrumbItems} />
 
-          <div className="badge-pill" style={{ marginTop: 12 }}>
-            <span className="dot" />
-            <span>Hospitality Technology Knowledge Hub</span>
+          <div
+            className="badge-pill"
+            style={{
+              background: 'rgba(15, 20, 26, 0.92)',
+              backdropFilter: 'blur(14px)',
+              WebkitBackdropFilter: 'blur(14px)',
+              border: '1px solid rgba(119, 156, 141, 0.55)',
+              color: '#ebfaf2',
+              fontWeight: 600,
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.7)',
+              marginTop: 14,
+              marginBottom: 20
+            }}
+          >
+            <span className="dot" style={{ backgroundColor: '#779c8d', boxShadow: '0 0 10px #779c8d' }} />
+            <span style={{ color: '#ebfaf2', letterSpacing: '0.06em', fontWeight: 600 }}>Hospitality Technology Knowledge Hub</span>
           </div>
 
           <h1 className="hero-title">
@@ -93,22 +120,25 @@ export default function Resources() {
             Practical operational guides, channel management blueprints, and direct booking financial strategies written for hotel owners and general managers.
           </p>
 
-          {/* Category Filter Pills */}
+          {/* Category Filter Pills in Hero */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: 10, flexWrap: 'wrap', marginTop: 16 }}>
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
                 type="button"
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => handleCategorySelect(cat, true)}
                 style={{
-                  padding: '8px 18px',
+                  padding: '8px 20px',
                   borderRadius: 9999,
-                  fontSize: '0.82rem',
+                  fontSize: '0.84rem',
                   fontWeight: 600,
                   cursor: 'pointer',
-                  border: selectedCategory === cat ? '1px solid var(--accent-sage-light)' : '1px solid rgba(255,255,255,0.08)',
-                  background: selectedCategory === cat ? 'var(--accent-sage-soft)' : 'rgba(15,20,26,0.6)',
-                  color: selectedCategory === cat ? '#fff' : 'var(--text-secondary)',
+                  border: selectedCategory === cat ? '1px solid var(--accent-sage-light)' : '1px solid rgba(255,255,255,0.12)',
+                  background: selectedCategory === cat ? 'var(--accent-sage)' : 'rgba(15, 20, 26, 0.88)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  color: selectedCategory === cat ? '#ffffff' : '#d1d8e0',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.5)',
                   transition: 'all 0.2s ease'
                 }}
               >
@@ -120,13 +150,37 @@ export default function Resources() {
       </section>
 
       {/* Guides Grid */}
-      <section style={{ paddingTop: 20 }}>
+      <section id="guides-grid" style={{ paddingTop: 30 }}>
         <div className="container">
-          <div className="section-header" style={{ marginBottom: 32 }}>
+          <div className="section-header text-center" style={{ marginBottom: 32 }}>
             <h2>Educational Guides &amp; Hotel Industry Insights</h2>
-            <p className="lead">
+            <p className="lead" style={{ margin: '0 auto 16px' }}>
               Clear, practical explanations of hotel technology, booking centralization, and direct revenue strategies.
             </p>
+
+            {/* In-Grid Category Filter Pills for easy filtering while scrolled */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 8, flexWrap: 'wrap', marginTop: 16 }}>
+              {CATEGORIES.map(cat => (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => handleCategorySelect(cat, false)}
+                  style={{
+                    padding: '6px 16px',
+                    borderRadius: 9999,
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    border: selectedCategory === cat ? '1px solid var(--accent-sage-light)' : '1px solid rgba(255,255,255,0.08)',
+                    background: selectedCategory === cat ? 'var(--accent-sage-soft)' : 'rgba(15, 20, 26, 0.6)',
+                    color: selectedCategory === cat ? '#ffffff' : 'var(--text-secondary)',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 28 }}>

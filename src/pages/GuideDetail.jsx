@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Clock, Calendar, ArrowRight, ArrowLeft, CheckCircle2, BookOpen, ExternalLink, HelpCircle } from 'lucide-react';
+import { Clock, Calendar, ArrowRight, ArrowLeft, CheckCircle2, BookOpen, HelpCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { getGuideBySlug, GUIDES } from '../data/guidesData';
@@ -68,10 +68,7 @@ export default function GuideDetail() {
               <Clock size={13} /> {guide.readTime}
             </span>
             <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              • Updated {guide.lastUpdated}
-            </span>
-            <span style={{ fontSize: '0.8rem', color: 'var(--accent-sage-light)' }}>
-              • Researched by {guide.author || 'COAB Hospitality Engineering'}
+              • {guide.lastUpdated}
             </span>
           </div>
 
@@ -182,44 +179,6 @@ export default function GuideDetail() {
                 )}
               </section>
             ))}
-          </div>
-
-          {/* Authoritative Primary References & Citations */}
-          {guide.citations && guide.citations.length > 0 && (
-            <div style={{ marginTop: 40, padding: 20, borderRadius: 12, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, marginBottom: 10 }}>
-                Authoritative Primary References &amp; Technical Standards:
-              </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {guide.citations.map((cite, cIdx) => (
-                  <li key={cIdx}>
-                    <a
-                      href={cite.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: 'var(--accent-sage-light)', fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'underline' }}
-                    >
-                      {cite.title} <ExternalLink size={12} style={{ opacity: 0.7 }} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* E-E-A-T Editorial Verification Box */}
-          <div style={{ marginTop: 24, padding: 18, borderRadius: 12, background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'var(--accent-sage-soft)', border: '1px solid var(--accent-sage-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-sage-light)', fontWeight: 700, fontSize: '0.9rem' }}>
-              COAB
-            </div>
-            <div style={{ flex: 1, minWidth: 240 }}>
-              <div style={{ fontSize: '0.88rem', color: '#fff', fontWeight: 600 }}>
-                Published by COAB Hospitality Systems Engineering
-              </div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 2 }}>
-                Technical accuracy reviewed by {guide.reviewer || 'COAB Systems Architecture'}. COAB Solutions Private Limited, Ernakulam, Kerala.
-              </div>
-            </div>
           </div>
 
           {/* Guide FAQ Section (AEO Question-First Answers) */}

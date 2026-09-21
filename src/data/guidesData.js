@@ -13,8 +13,6 @@ export const GUIDES = [
     category: 'Hotel Management',
     readTime: '6 min read',
     lastUpdated: 'September 2026',
-    author: 'COAB Hospitality Engineering Team',
-    reviewer: 'COAB Systems Architecture',
     primaryKeyword: 'what is hotel management software',
     secondaryKeywords: ['how does hotel management software work', 'hotel management software features', 'hotel PMS guide'],
     zeroClickDefinition: 'Hotel management software is a centralized digital platform that unifies and automates daily property operations — including real-time room availability, front-desk check-ins, housekeeping status, multi-channel OTA reservations, and guest billing — into a single operational interface.',
@@ -23,16 +21,6 @@ export const GUIDES = [
       'Prevents double bookings by instantly locking room availability across all sales channels.',
       'Empowers housekeeping staff with 1-tap mobile readiness status updates.',
       'Boutique and independent hotels benefit most from lightweight, modern web-based architectures without heavy server hardware.'
-    ],
-    citations: [
-      {
-        title: 'Schema.org Hotel Specification',
-        url: 'https://schema.org/Hotel'
-      },
-      {
-        title: 'Google Hotel Center Official Guidelines',
-        url: 'https://support.google.com/hotelprices/answer/9238392'
-      }
     ],
     relatedSolutionPath: '/features',
     relatedSolutionAnchor: 'Explore Staycore Hotel Management System',
@@ -110,8 +98,6 @@ export const GUIDES = [
     category: 'OTA Management',
     readTime: '5 min read',
     lastUpdated: 'September 2026',
-    author: 'COAB Hospitality Engineering Team',
-    reviewer: 'COAB Systems Architecture',
     primaryKeyword: 'what is OTA booking management',
     secondaryKeywords: ['manage OTA bookings', 'OTA management system for hotels', 'hotel booking channel management'],
     zeroClickDefinition: 'OTA booking management is the operational process of aggregating, synchronizing, and organizing hotel reservations originating from Online Travel Agencies (such as MakeMyTrip, Goibibo, Booking.com, Agoda, and Expedia) into a single master calendar to prevent overbookings and eliminate manual data entry.',
@@ -120,16 +106,6 @@ export const GUIDES = [
       'Automated parsing extracts guest details and assigns rooms in under 0.8 seconds.',
       'Instant inventory auto-hold locks room availability so multiple channels cannot sell the same suite.',
       'Consolidates returning guest histories across disparate OTA profiles into one chronological feed.'
-    ],
-    citations: [
-      {
-        title: 'OpenTravel Alliance Technical Specifications',
-        url: 'https://opentravel.org'
-      },
-      {
-        title: 'IATA Hospitality and Travel Distribution Guidelines',
-        url: 'https://www.iata.org'
-      }
     ],
     relatedSolutionPath: '/ota-booking-management',
     relatedSolutionAnchor: 'Explore Staycore Automated OTA Aggregator',
@@ -193,8 +169,6 @@ export const GUIDES = [
     category: 'Direct Bookings',
     readTime: '7 min read',
     lastUpdated: 'September 2026',
-    author: 'COAB Hospitality Engineering Team',
-    reviewer: 'COAB Systems Architecture',
     primaryKeyword: 'OTA vs direct hotel bookings',
     secondaryKeywords: ['direct hotel booking benefits', 'how to increase direct hotel bookings', 'hotel direct booking software'],
     zeroClickDefinition: 'OTA bookings are reservations acquired through third-party travel platforms where the hotel surrenders an 18% to 25% commission fee, while direct hotel bookings are reservations made directly on the hotel’s custom-domain website where the property keeps 100% of guest revenue.',
@@ -203,16 +177,6 @@ export const GUIDES = [
       'Direct guests provide higher profit margins, direct contact information, and significantly higher repeat booking rates.',
       'Having an independent custom-domain website is essential to converting search queries and AI recommendations into direct bookings.',
       'Direct booking engines with 0% platform commission enable hoteliers to offer special guest perks while still earning more net revenue.'
-    ],
-    citations: [
-      {
-        title: 'Google Hotel Ads & Free Booking Links Guidelines',
-        url: 'https://support.google.com/hotelprices'
-      },
-      {
-        title: 'Hotel Electronic Distribution Network Association (HEDNA) Direct Booking Insights',
-        url: 'https://www.hedna.org'
-      }
     ],
     relatedSolutionPath: '/direct-hotel-booking',
     relatedSolutionAnchor: 'Explore Staycore Direct Hotel Booking Software',
@@ -269,8 +233,6 @@ export const GUIDES = [
     category: 'Hotel Websites',
     readTime: '6 min read',
     lastUpdated: 'September 2026',
-    author: 'COAB Hospitality Engineering Team',
-    reviewer: 'COAB Systems Architecture',
     primaryKeyword: 'what should a hotel website include',
     secondaryKeywords: ['hotel website builder', 'hotel booking website features', 'hotel website with booking'],
     zeroClickDefinition: 'An effective hotel booking website must feature a custom branded domain, mobile-first direct booking engine, high-resolution visual gallery, real-time room availability, instant payment processing (UPI/cards), structured Google schema, and transparent policies.',
@@ -279,16 +241,6 @@ export const GUIDES = [
       'Mobile-first responsive design is critical, as over 60% of leisure hotel bookings occur on mobile devices.',
       'Direct checkout must be frictionless, supporting instant card and UPI payments without redirects to slow portals.',
       'Structured Hotel schema ensures automatic inclusion in Google Hotel Search and conversational AI queries.'
-    ],
-    citations: [
-      {
-        title: 'Google Search Central Hotel Structured Data Guide',
-        url: 'https://developers.google.com/search/docs/appearance/structured-data/hotel'
-      },
-      {
-        title: 'W3C Web Accessibility Initiative & Usability Best Practices',
-        url: 'https://www.w3.org/WAI/'
-      }
     ],
     relatedSolutionPath: '/website-only',
     relatedSolutionAnchor: 'Explore Staycore Hotel Website Builder',
@@ -355,8 +307,6 @@ export const GUIDES = [
     category: 'Hotel Technology',
     readTime: '6 min read',
     lastUpdated: 'September 2026',
-    author: 'COAB Hospitality Engineering Team',
-    reviewer: 'COAB Systems Architecture',
     primaryKeyword: 'hotel reservation system',
     secondaryKeywords: ['how hotel reservation systems work', 'hotel technology', 'hotel booking technology', 'hospitality management tools'],
     zeroClickDefinition: 'A hotel reservation system is a centralized technology platform that synchronizes room inventory, records guest bookings, automates front-desk check-ins, and connects direct website channels and third-party OTAs into one operational master calendar.',
@@ -365,20 +315,6 @@ export const GUIDES = [
       'Eliminates double bookings by executing automated inventory locks the second a room is confirmed.',
       'Replaces bulky on-premise servers with secure, browser-based cloud access for front-desk and remote managers.',
       'Reduces commission drag by connecting directly to a hotel’s own custom-domain direct booking engine.'
-    ],
-    citations: [
-      {
-        title: 'Schema.org LodgingBusiness & Reservation Standards',
-        url: 'https://schema.org/LodgingReservation'
-      },
-      {
-        title: 'PCI-DSS Payment Security Standards for Hospitality Checkout',
-        url: 'https://www.pcisecuritystandards.org'
-      },
-      {
-        title: 'Google Hotel Center Integration Documentation',
-        url: 'https://support.google.com/hotelprices/answer/9238392'
-      }
     ],
     relatedSolutionPath: '/features',
     relatedSolutionAnchor: 'Explore Staycore Hotel Management System',
