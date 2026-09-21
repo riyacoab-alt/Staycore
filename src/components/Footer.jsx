@@ -94,9 +94,9 @@ export default function Footer() {
             <h5>Sister Products</h5>
             <ul className="footer-links">
               <li><a href="https://coab.club" target="_blank" rel="noopener noreferrer">COAB Studio</a></li>
-              <li><Link to="/about">SkoolPay (Cashless School Fees)</Link></li>
-              <li><Link to="/about">SkoolWay (GPS/RFID Tracking)</Link></li>
-              <li><Link to="/contact">Partner Inquiries</Link></li>
+              <li><Link to="/about#why-coab">SkoolPay (Cashless School Fees)</Link></li>
+              <li><Link to="/about#why-coab">SkoolWay (GPS/RFID Tracking)</Link></li>
+              <li><Link to="/contact#inquiries">Partner Inquiries</Link></li>
             </ul>
           </div>
         </div>

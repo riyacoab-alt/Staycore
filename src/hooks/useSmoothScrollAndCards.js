@@ -9,7 +9,7 @@ import Lenis from 'lenis';
  * - Viewport scroll reveal observer for cards
  */
 export default function useSmoothScrollAndCards() {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   // 1. Lenis Smooth Scroll Setup
   useEffect(() => {
@@ -36,24 +36,57 @@ export default function useSmoothScrollAndCards() {
 
     animationFrameId = requestAnimationFrame(raf);
 
-    // Smooth scroll for hash anchor links (e.g. #features-preview)
+    // Smooth scroll handler for both raw hash anchors and same-page router links
     const handleAnchorClick = (e) => {
-      const target = e.target.closest('a[href^="#"]');
-      if (target) {
-        const hash = target.getAttribute('href');
-        if (hash && hash !== '#') {
-          const el = document.querySelector(hash);
-          if (el) {
+      const anchor = e.target.closest('a');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      // Case 1: Pure hash link on current page (e.g. href="#why-coab" or href="#")
+      if (href.startsWith('#')) {
+        if (href === '#') {
+          e.preventDefault();
+          lenis.scrollTo(0, { duration: 1.0 });
+          return;
+        }
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
+          e.preventDefault();
+          lenis.scrollTo(targetEl, { offset: -90, duration: 1.1 });
+        }
+        return;
+      }
+
+      // Case 2: Router link with hash matching current path (e.g. href="/about#why-coab" while on "/about")
+      try {
+        const url = new URL(anchor.href, window.location.origin);
+        const currentPath = window.location.pathname;
+
+        if (url.pathname === currentPath) {
+          if (url.hash) {
+            const targetEl = document.querySelector(url.hash);
+            if (targetEl) {
+              e.preventDefault();
+              window.history.pushState(null, '', url.pathname + url.hash);
+              lenis.scrollTo(targetEl, { offset: -90, duration: 1.1 });
+            }
+          } else {
+            // Clicking same page link without hash (e.g. clicking "About" while already on "/about#why-coab")
             e.preventDefault();
-            lenis.scrollTo(el, { offset: -90, duration: 1.2 });
+            window.history.pushState(null, '', url.pathname);
+            lenis.scrollTo(0, { duration: 0.9 });
           }
         }
+      } catch (err) {
+        // Fallback for relative or malformed URLs
       }
     };
 
     document.addEventListener('click', handleAnchorClick);
 
-    // Expose lenis globally for external controls (e.g., reset scroll)
+    // Expose lenis globally for external controls
     window.__lenis = lenis;
 
     return () => {
@@ -64,14 +97,33 @@ export default function useSmoothScrollAndCards() {
     };
   }, []);
 
-  // Route change: scroll to top smoothly
+  // Route & Hash change: scroll to target hash or top
   useEffect(() => {
-    if (window.__lenis) {
-      window.__lenis.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname]);
+    const scrollToTarget = () => {
+      if (location.hash) {
+        const targetEl = document.querySelector(location.hash);
+        if (targetEl) {
+          if (window.__lenis) {
+            window.__lenis.scrollTo(targetEl, { offset: -90, duration: 1.1 });
+          } else {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+          return;
+        }
+      }
+
+      // If no hash or element not found, scroll to top
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    // Small timeout to allow DOM and page content to mount
+    const timer = setTimeout(scrollToTarget, 60);
+    return () => clearTimeout(timer);
+  }, [location.pathname, location.hash, location.key]);
 
   // 2. Interactive 3D Card Spotlight & Tilt
   useEffect(() => {
@@ -115,7 +167,7 @@ export default function useSmoothScrollAndCards() {
         card.removeEventListener('mouseleave', handleMouseLeave);
       });
     };
-  }, [pathname]);
+  }, [location.pathname]);
 
   // 3. Fallback Viewport Intersection Observer for Scroll Card Reveal
   useEffect(() => {
@@ -144,5 +196,5 @@ export default function useSmoothScrollAndCards() {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, [pathname]);
+  }, [location.pathname]);
 }
