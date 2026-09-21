@@ -463,17 +463,5 @@ export const SEO_PAGES = {
     keywords: 'Staycore, 404',
     path: '/404',
     robots: 'noindex, follow'
-  },
-  privacyPolicy: {
-    title: 'Privacy Policy | Staycore Hotel Management Software',
-    description: 'Staycore’s commitment to hotelier data sovereignty, guest privacy, 0% commission payment handling, and zero-monetization data policies.',
-    keywords: 'Staycore privacy policy, hotelier data sovereignty, guest privacy, hotel management software terms',
-    path: '/privacy-policy'
-  },
-  termsOfService: {
-    title: 'Terms of Service | Staycore Hotel Management Platform',
-    description: 'Review the subscription terms, service policies, zero-commission guarantee, and operational guidelines governing Staycore software.',
-    keywords: 'Staycore terms of service, hotel management platform terms, 0% commission guarantee, subscription policies',
-    path: '/terms-of-service'
   }
 };

@@ -13,8 +13,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Resources from './pages/Resources';
 import GuideDetail from './pages/GuideDetail';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
 import NotFound from './pages/NotFound';
 import useSmoothScrollAndCards from './hooks/useSmoothScrollAndCards';
 
@@ -45,8 +43,6 @@ export default function App() {
         <Route path="/contact" element={<Contact onToast={showToast} />} />
         <Route path="/resources" element={<Resources onToast={showToast} />} />
         <Route path="/resources/:slug" element={<GuideDetail onToast={showToast} />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy onToast={showToast} />} />
-        <Route path="/terms-of-service" element={<TermsOfService onToast={showToast} />} />
 
         {/* Semantic URL Aliases / 301-equivalent redirects to prevent duplicate content */}
         <Route path="/hotel-management-software" element={<Navigate to="/features" replace />} />
