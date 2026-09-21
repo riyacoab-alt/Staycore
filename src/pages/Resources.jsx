@@ -6,6 +6,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import { GUIDES } from '../data/guidesData';
 import {
   SEO_PAGES,
+  SITE_ORIGIN,
   createBreadcrumbSchema
 } from '../data/seoData';
 

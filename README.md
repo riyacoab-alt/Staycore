@@ -45,18 +45,9 @@ stay core website/
 │       ├── WebsiteOnly.jsx      # Website-Only Plan (/website-only)
 │       ├── Pricing.jsx          # Pricing & ROI calculator (/pricing)
 │       ├── About.jsx            # About & COAB story (/about)
+│       ├── Resources.jsx        # Guides & Knowledge Hub (/resources)
+│       ├── GuideDetail.jsx      # Individual Guide Page (/resources/:slug)
 │       └── Contact.jsx          # Demo booking & contact channels (/contact)
-│
-└── archive/                     # Preserved historical assets
-    └── legacy-static/           # Original static HTML/CSS/JS version
-        ├── about.html
-        ├── contact.html
-        ├── features.html
-        ├── pricing.html
-        ├── website-only.html
-        ├── css/
-        ├── js/
-        └── assets/
 ```
 
 ---
